@@ -1,5 +1,9 @@
 @extends('layouts.home')
 
+@push('frontCss')
+<link rel="stylesheet" href="{{ asset('css/homepage/homestyle.css') }}">
+@endpush
+
 @section('content')
     {{-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
@@ -16,187 +20,7 @@
                 </div>
             @endif
         </div> --}}
-
-    <!-- header section starts  -->
-    <header>
-        <div class="header-2">
-            <ul class="social-network d-flex align-items-center p-0">
-                <a href="home.html" class="logo"><i class="fas fa-seedling"></i></a>
-                <h5>GoGreenNursery</h5>
-            </ul>
-            <form action="" class="search-bar-container">
-                <input type="search" id="search-bar" placeholder="search here...">
-                <label for="search-bar" class="fas fa-search"></label>
-            </form>
-            <div class="icons">
-                <ul class="social-network d-flex align-items-center p-0">
-                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                    <a href="#"><i class="fas fa-heart"></i></a>
-                    <a href="login/login.html"><i class="fas fa-user-circle"></i></a>
-                </ul>
-            </div>
-        </div>
-        <!--nevegation  menu start-->
-        <div class="header-3">
-            <div id="menu-bar" class="fas fa-bars"></div>
-            <nav class="nav-menu">
-                <ul class="menu">
-                    <li class="menu-item menu-item-has-children">
-                        <div class="box-container"></div>
-                        <a href="home.html">Home</a>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="plants.html">Plants</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="types of plants.html">Types of plants</a>
-                                <a href="plants by season.html">Plants By Season</a>
-                                <a href="Plants.html">Plants By Location</a>
-                                <a href="flowering.html">Flowering Plants</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="seeds.html">Seeds</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="flower seeds.html">Flower Seeds</a>
-                                <a href="vegetable seeds.html">Vegetable Seeds</a>
-                                <a href="fruit seed.html">Fruit Seeds</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="soil&fertilizer.html">Soil&fertilizer</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="soil&fertilizer.html">Organic fertilizer</a>
-                                <a href="spray.html">Spray</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="accesssories.html">Accessories</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="gardening tool.html">Gardening Tools</a>
-                                <a href="seed starter.html">Seed Starter</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="pots.html">Pots</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="types of pots.html">Types of Pots</a>
-                                <a href="Growing Bags.html">Growing Bags</a>
-                                <a href="steel pots.html">Steel Pots</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="gardendecore.html">our Services</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="events.html">Plants For Events</a>
-                                <a href="tips and tricks.html">Gardening Trips & Tricks</a>
-                                <a href="gardendecore.html">Garden Decoration</a>
-                                <a href="birds cage.html">Bird Houses</a>
-                                <a href="landscapinng.html">Landscaping</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="our polices.html">Our Polices</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="faq.html">FAQ</a>
-                                <a href="return polices.html">Return Policy</a>
-                                <a href="privacy policy.html">Privacy Policy</a>
-                                <a href="clam&out of stock.html">Damage Calim & Out Of Stock</a>
-                                <a href="delivery area and time.html">Delivery Area</a>
-                                <a href="delivery area and time.html">Delivery Time</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="gardener.html">Staff</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="gardener.html">Gardener</a>
-                                <a href="delivery person.html">Delivery person</a>
-                                <a href="delivery person.html">Decore person</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="deals.html">Deals</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="deals.html">Occasion</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <!-- header section ends -->
-
-    <!-- home section starts  -->
-
-<section class="homesection" id="homediv">
-    <div class="swiper-container home-slider">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="box" style="background: url({{ asset('images/images/slider1.jpg') }});">
-                    <div class="content">
-                        <h3>Go Green Nursery Now </h3>
-                        <a href="home.html" class="btn">shop now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="box" style="background: url({{ asset('images/images/slider2.jpg') }});">
-                    <div class="content">
-
-                        <h3>Plants make people happy</h3>
-                        <a href="Plants.html" class="btn">shop now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="box" style="background: url({{ asset('images/images/slider3.jpg') }});">
-                    <div class="content">
-
-                        <h3>decorate your home now</h3>
-                        <a href="gardendecore.html" class="btn">shop now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="box" style="background: url({{ asset('images/images/slider4.jpeg') }});">
-                    <div class="content">
-
-                        <h3>Landscaping now</h3>
-                        <a href="landscapinng.html" class="btn">shop now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="box" style="background: url({{ asset('images/images/slider5.jpeg') }});">
-                    <div class="content">
-
-                        <h3>Seeds now</h3>
-                        <a href="seeds.html" class="btn">shop now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-</section>
-<!-- home section ends -->
+@include('layouts.welcome.slider')
 <!-- banner section starts  -->
 
 <section class="banner-container">
@@ -541,57 +365,13 @@
 </section>
 <!-- contact section ends -->
 
-<!-- Footer section Start-->
-<footer class="footer_wrapper mt-3 mt-md-0">
-    <div class="container px-5 px-lg-0">
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
-                <h5>GoGreenNursery</h5>
-                <p class="mb-4 ps-0 company_details">Pakistan largest online
-                    nursery, which has grown
-                    immensely over a short
-                    period of time....</p>
-                <div class="contact-info">
-                    <ul class="list-unstyled">
-                        <li><h4><i class="fa fa-home me-3"></i> Hunter pura, Sialkot City, Pakistan</h4></li>
-                        <li><h4><i class="fa fa-phone me-3"></i>+92493872806</h4></li>
-                        <li><h4><i class="fa fa-envelope me-3"></i>gogreennurseery786@gmail.com</h4></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
-                <h5>Customer Support</h5>
-                <ul class="link-widget p-0">
-                    <li><a href="privacy policy.html">Privacy Policy</a></li>
-                    <li><a href="return polices.html">Return polices</a></li>
-                    <li><a href="office.html">Office product rent</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
-                <h5>Quick Links</h5>
-                <ul class="link-widget p-0">
-                    <li><a href="Plants.html">Plants</a></li>
-                    <li><a href="accesssories.html">Accessories</a></li>
-                    <li><a href="gardendecore.html">our services</a></li>
-                    <li><a href="privacy policy.html">Our Polices</a></li>
-                    <li><a href="deals.html">Deals</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
+@include('layouts.welcome.footer')
 
-                <h5>Stay Connected</h5>
-                <ul class="social-network d-flex align-items-center p-0">
-                    <li><a href="https://www.facebook.com/profile.php?id=100094253457577"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://mail.google.com/mail/u/0/?pli=1#inbox"><i class="fas fa-envelope"></i></a></li>
-                    <li><a href="https://www.instagram.com/gogreennursery786/"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid copyright-section">
-        <p>Copyright <a href="#">© gogreennurseery.</a> All Rights Reserved</p>
-    </div>
-</footer>
-<!-- Footer Section Exit  -->
-<a href="home.html" class="scroll-top fas fa-angle-up"></a>
+@push('frontJs')
+
+<script src="{{ asset('js/homescript.js')}}" defer></script>
+<script src="{{ asset('js/script.js')}}" defer></script>
+<script src="{{ asset('js/deal.js')}}" defer></script>
+
+@endpush
 @endsection
