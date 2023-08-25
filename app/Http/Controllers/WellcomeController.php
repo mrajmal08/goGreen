@@ -61,6 +61,45 @@ class WellcomeController extends Controller
     public function steel_pots(){
         return view('frontend.steel_pots');
     }
+    public function garden_core(){
+        return view('frontend.garden_core');
+    }
+    public function privacy_policy(){
+        return view('frontend.privacy_policy');
+    }
+    public function events(){
+        return view('frontend.events');
+    }
+    public function trips_tricks(){
+        return view('frontend.trips_tricks');
+    }
+    public function bird_cage(){
+        return view('frontend.bird_cage');
+    }
+    public function landscaping(){
+        return view('frontend.landscaping');
+    }
+    public function faq(){
+        return view('frontend.faq');
+    }
+    public function return_policy(){
+        return view('frontend.return_policy');
+    }
+    public function damage_calm(){
+        return view('frontend.damage_calm');
+    }
+    public function delivery_area_and_time(){
+        return view('frontend.delivery_area_and_time');
+    }
+    public function gardener(){
+        return view('frontend.gardener');
+    }
+    public function delivery_person(){
+        return view('frontend.delivery_person');
+    }
+    public function deals(){
+        return view('frontend.deals');
+    }
 
 
 }

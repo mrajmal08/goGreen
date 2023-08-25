@@ -13,7 +13,7 @@
                 <ul class="social-network d-flex align-items-center p-0">
                     <a href="#"><i class="fas fa-shopping-cart"></i></a>
                     <a href="#"><i class="fas fa-heart"></i></a>
-                    <a href="login/login.html"><i class="fas fa-user-circle"></i></a>
+                    <a href="{{ route('login') }}"><i class="fas fa-user-circle"></i></a>
                 </ul>
             </div>
         </div>
@@ -76,45 +76,44 @@
                         </ul>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                        <a href="gardendecore.html">our Services</a>
+                        <a href="{{ route('garden.core')}}">our Services</a>
                         <ul class="sub-menu">
                             <li class="menu-item">
-                                <a href="events.html">Plants For Events</a>
-                                <a href="tips and tricks.html">Gardening Trips & Tricks</a>
-                                <a href="gardendecore.html">Garden Decoration</a>
-                                <a href="birds cage.html">Bird Houses</a>
-                                <a href="landscapinng.html">Landscaping</a>
+                                <a href="{{ route('events')}}">Plants For Events</a>
+                                <a href="{{ route('trips.tricks')}}">Gardening Trips & Tricks</a>
+                                <a href="{{ route('garden.core')}}">Garden Decoration</a>
+                                <a href="{{ route('bird.cage')}}">Bird Houses</a>
+                                <a href="{{ route('landscaping')}}">Landscaping</a>
                             </li>
                         </ul>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                        <a href="our polices.html">Our Polices</a>
+                        <a href="{{ route('privacy.policy')}}">Our Polices</a>
                         <ul class="sub-menu">
                             <li class="menu-item">
-                                <a href="faq.html">FAQ</a>
-                                <a href="return polices.html">Return Policy</a>
-                                <a href="privacy policy.html">Privacy Policy</a>
-                                <a href="clam&out of stock.html">Damage Calim & Out Of Stock</a>
-                                <a href="delivery area and time.html">Delivery Area</a>
-                                <a href="delivery area and time.html">Delivery Time</a>
+                                <a href="{{ route('faq')}}">FAQ</a>
+                                <a href="{{ route('return.policy') }}">Return Policy</a>
+                                <a href="{{ route('privacy.policy')}}">Privacy Policy</a>
+                                <a href="{{ route('damage.calm') }}">Damage Calim & Out Of Stock</a>
+                                <a href="{{ route('delivery.area.time')}}">Delivery Area and Time</a>
                             </li>
                         </ul>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                        <a href="gardener.html">Staff</a>
+                        <a href="{{ route('gardener') }}">Staff</a>
                         <ul class="sub-menu">
                             <li class="menu-item">
-                                <a href="gardener.html">Gardener</a>
-                                <a href="delivery person.html">Delivery person</a>
-                                <a href="delivery person.html">Decore person</a>
+                                <a href="{{ route('gardener') }}">Gardener</a>
+                                <a href="{{ route('delivery.person') }}">Delivery person</a>
+                                <a href="{{ route('delivery.person') }}">Decore person</a>
                             </li>
                         </ul>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                        <a href="deals.html">Deals</a>
+                        <a href="{{ route('deals')}}">Deals</a>
                         <ul class="sub-menu">
                             <li class="menu-item">
-                                <a href="deals.html">Occasion</a>
+                                <a href="{{ route('deals')}}">Occasion</a>
                             </li>
                         </ul>
                     </li>

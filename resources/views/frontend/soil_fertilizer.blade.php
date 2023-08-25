@@ -5,6 +5,11 @@
 @endpush
 @section('content')
 
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+
 
 <div class="sidebar">
     <h1>Soil and Fertilizer</h1>
@@ -24,29 +29,16 @@
      </ol>
 </div>
 
-
-
-
-
-
-
-
 <!-- product section starts  -->
 
 <section class="product" id="product">
-
-
     <h1 class="heading">Soil and Fertilizer</h1>
-
     <div class="box-container">
-
         <div class="box" data-name="b-DAP fertilizer">
-
             <div class="icons">
                 <a href="#" class="fas fa-heart"></a>
-
             </div>
-            <img src="soilfertimg/DAP fertilizer.jpg" alt="">
+            <img src="{{ asset('images/soilfertimg/DAPfertilizer.jpg')}}" alt="">
             <h3>DAP Fertilizer</h3>
             <div class="price">Rs.12,000 </div>
             <a href="#" class="btn">add to cart</a>
@@ -114,7 +106,7 @@
 
         <div class="preview" data-target="b-DAP fertilizer">
            <i class="fas fa-times"></i>
-           <img src="soilfertimg/DAP fertilizer.jpg" alt="" width="50%">
+           <img src="{{ asset('images/soilfertimg/DAPfertilizer.jpg')}}" alt="" width="50%">
            <h3>DAP Fertilizer</h3>
            <h2>Description:</h2>
            <p>Produced from the reaction of ammonia and phosphoric acid, Di-Ammonium phosphate (DAP) is one of the most widely used phosphate fertilizer in agriculture across the world today. DAP is composed of 18% Nitrogen and 46% Phosphorus. DAP is alkaline with a high pH, exceeding 7.5. The initial pH of DAP solution is basic and can influence the microsite reactions of phosphate and soil OM .</p>
@@ -172,16 +164,13 @@
                <a href="#" class="cart">add to cart</a>
             </div>
         </div>
-
-
-
     </div>
 </section>
 
+@include('layouts.welcome.footer')
+@push('frontJs')
 
-@extends('layouts.home')
-
-@push('frontCss')
-    <link rel="stylesheet" href="{{ asset('css/homepage/spray.css') }}">
+    <script src="{{ asset('js/homescript.js') }}" defer></script>
+    <script src="{{ asset('js/script.js') }}" defer></script>
 @endpush
-@section('content')
+@endsection
