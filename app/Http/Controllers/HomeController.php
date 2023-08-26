@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
@@ -23,6 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $totalUSers = User::all()->count();
+        return view('home', compact('totalUSers'));
+    }
+
+    public function profile()
+    {
+        $id = auth()->user()->id;
+        $user = User::findOrFail($id);
+        return view('user.profile', compact('user'));
     }
 }

@@ -52,3 +52,8 @@ Route::get('/delivery-area-and-time', [Web\WellcomeController::class, 'delivery_
 Route::get('/gardener', [Web\WellcomeController::class, 'gardener'])->name('gardener');
 Route::get('/delivery-person', [Web\WellcomeController::class, 'delivery_person'])->name('delivery.person');
 Route::get('/deals', [Web\WellcomeController::class, 'deals'])->name('deals');
+
+
+
+// Admin Route
+Route::get('/profile', [web\HomeController::class, 'profile'])->name('profile');
