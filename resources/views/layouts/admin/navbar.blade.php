@@ -32,9 +32,14 @@
                     <i class="fas fa-user mr-2"></i> Profile
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="{{ route('logout') }}" class="dropdown-item">
-                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
-                </a>
+                <form action="/logout" method="post">
+                    @csrf
+                    <a class="dropdown-item">
+                    <i class="nav-icon fas fa-user"></i>
+                    <button class="btn" type="submit">Logout</button>
+                    </a>
+                </form>
+
                 <div class="dropdown-divider"></div>
 
             </div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,6 +26,15 @@ class HomeController extends Controller
     {
         $totalUSers = User::all()->count();
         return view('home', compact('totalUSers'));
+    }
+
+    public function users(){
+
+        if(Auth::user()->role_id == 2){
+            return redirect()->route('/')->with('error','Sorry you are not admin');
+        }
+        $users = User::orderBy('id', 'DESC')->get();
+        return view('dashboard.users.index', compact('users'));
     }
 
     public function profile()

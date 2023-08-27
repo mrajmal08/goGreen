@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -34,9 +35,20 @@ class WellcomeController extends Controller
     public function soil_fertilizer(){
         return view('frontend.soil_fertilizer');
     }
-    public function plants(){
-        return view('frontend.plants');
+    public function plants(Request $request){
+
+        // dd($request->id);
+        if($request->id){
+            $plants = DB::table('plants')->where('cat_id', $request->id)->get();
+            // dd($plants);
+        }else{
+            $plants = DB::table('plants')->get();
+        }
+        $types = DB::table('plants_types')->get();
+        $categories = DB::table('plants_categories')->get();
+        return view('frontend.plants', compact('types', 'categories', 'plants'));
     }
+
     public function seeds(){
         return view('frontend.seeds');
     }

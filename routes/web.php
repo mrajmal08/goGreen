@@ -30,7 +30,9 @@ Route::get('/fruit-seeds', [Web\WellcomeController::class, 'fruit_seeds'])->name
 Route::get('/vegetable-seeds', [Web\WellcomeController::class, 'vegetable_seeds'])->name('vegetable.seeds');
 Route::get('/spray', [Web\WellcomeController::class, 'spray'])->name('spray');
 Route::get('/soil-fertilizer', [Web\WellcomeController::class, 'soil_fertilizer'])->name('soil.fertilizer');
+
 Route::get('/plants', [Web\WellcomeController::class, 'plants'])->name('plants');
+
 Route::get('/seeds', [Web\WellcomeController::class, 'seeds'])->name('seeds');
 Route::get('/accessories', [Web\WellcomeController::class, 'accessories'])->name('accessories');
 Route::get('/gardening-tools', [Web\WellcomeController::class, 'gardening_tools'])->name('gardening.tools');
@@ -56,4 +58,19 @@ Route::get('/deals', [Web\WellcomeController::class, 'deals'])->name('deals');
 
 
 // Admin Route
+//users Routs
+Route::get('/users', [web\UserController::class, 'index'])->name('users.index');
+Route::get('/user/create', [web\UserController::class, 'create'])->name('users.create');
+Route::post('/user/store', [web\UserController::class, 'store'])->name('users.store');
+Route::get('/user/edit/{id}', [web\UserController::class, 'edit'])->name('users.edit');
+Route::post('/user/update/{id}', [web\UserController::class, 'update'])->name('users.update');
+Route::get('/user/delete/{id}', [web\UserController::class, 'destroy'])->name('users.delete');
 Route::get('/profile', [web\HomeController::class, 'profile'])->name('profile');
+
+//Plants Route
+Route::get('/admin/plants', [web\PlantController::class, 'index'])->name('plants.index');
+Route::get('/plants/create', [web\PlantController::class, 'create'])->name('plants.create');
+Route::post('/plants/store', [web\PlantController::class, 'store'])->name('plants.store');
+Route::get('/plants/edit/{id}', [web\PlantController::class, 'edit'])->name('plants.edit');
+Route::post('/plants/update/{id}', [web\PlantController::class, 'update'])->name('plants.update');
+Route::get('/plants/delete/{id}', [web\PlantController::class, 'destroy'])->name('plants.delete');

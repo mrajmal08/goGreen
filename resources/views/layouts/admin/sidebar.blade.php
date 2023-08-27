@@ -23,6 +23,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('users.index') }}" class="nav-link">
+                            <i class="nav-icon far fa-user"></i>
+                            <p>
+                                Cutomers
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon far fa-envelope"></i>
                             <p>
@@ -32,15 +40,9 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                <a href="{{ route('plants.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Pants</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Type of Pants</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -174,14 +176,16 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-user"></i>
-                            <p>
-                                Logout
-                            </p>
-                        </a>
-                    </li>
+                @else
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-user"></i>
+                        <p>
+                            My Orders
+                        </p>
+                    </a>
+                </li>
                 @endif
                 <div class="dropdown-divider"></div>
             </ul>
