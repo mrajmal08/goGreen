@@ -17,13 +17,13 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Plants Post</h1>
+                                <h1>Edit Plant</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="{{ route('plants.index') }}">All
+                                    <li class="breadcrumb-item"><a href="{{ route('flower.index') }}">All
                                         Plants</a></li>
-                                    <li class="breadcrumb-item active">Plant Post</li>
+                                    <li class="breadcrumb-item active">Edit Plant</li>
                                 </ol>
                             </div>
                         </div>
@@ -44,11 +44,12 @@
                         @endforeach
                     @endif
 
-                    <form method="POST" action="{{ route('plants.store') }}" enctype="multipart/form-data" id="quickForm">
+                    <form method="POST" action="{{ route('flower.update', [$plant->id]) }}" enctype="multipart/form-data" id="quickForm">
                         @CSRF
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card card-primary">
+
                                     <div class="card-header">
                                         <h3 class="card-title">Plants</h3>
 
@@ -59,23 +60,12 @@
                                             </button>
                                         </div>
                                     </div>
+
                                     <div class="card-body">
-
-
-                                        <div class="form-group">
-                                            <label>Plant Category</label>
-                                            <select class="form-control" name="cat_id" style="width: 100%;">
-                                                <option value="">--select category --</option>
-                                               @foreach($categories as $category)
-                                                <option value="{{ $category->id}} ">{{ $category->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-
                                         <div class="form-group">
                                             <label>Plant Type</label>
                                             <select class="form-control" name="type_id" style="width: 100%;">
-                                                <option value="">--select type --</option>
+                                                <option {{ $plant->type_id? 'selected':'' }} value="{{ $plant->type_id }}" >{{ DB::table('flowering_plants_types')->where('id',$plant->type_id)->pluck('name')->first()}}</option>
                                                @foreach($types as $type)
                                                 <option value="{{ $type->id}} ">{{ $type->name}}</option>
                                                 @endforeach
@@ -84,7 +74,7 @@
 
                                         <div class="form-group">
                                             <label for="inputName">Plant Name</label>
-                                            <input type="text" id="inputName" name="name" class="form-control">
+                                            <input type="text" id="inputName" name="name" value="{{ $plant->name}}" class="form-control">
                                         </div>
 
                                         <div class="form-group">
@@ -95,23 +85,31 @@
 
                                         <div class="form-group">
                                             <label for="inputTitle">Plant Price</label>
-                                            <input type="number" id="inputTitle" name="price" class="form-control">
+                                            <input type="number" id="inputTitle" name="price" value="{{$plant->price}}" class="form-control">
                                         </div>
-
                                         <div class="form-group">
                                             <label for="inputTitle">Discounted Price</label>
-                                            <input type="number" id="inputTitle" name="discount_price" class="form-control">
+                                            <input type="number" id="inputTitle" name="discount_price" value="{{$plant->discount_price}}" class="form-control">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="inputClientCompany">Feature image</label>
                                             <div class="custom-file">
-                                                <input type="file" name="photo" class="custom-file-input"
+                                                <input type="file" name="feature_image" class="custom-file-input"
                                                     id="customFile">
                                                 <label class="custom-file-label" for="customFile">Choose Image</label>
 
                                             </div>
-
+                                            <div class="">
+                                                <a href="{{ asset('assets/plantsFiles') . '/' . $plant->photo }}?text=1"
+                                                    data-toggle="lightbox"
+                                                    data-title="{{ $plant->name }}"
+                                                    data-gallery="gallery">
+                                                    <img src="{{ asset('assets/plantsFiles') . '/' . $plant->photo }}?text=1"
+                                                        class="img-fluid" alt="{{ $plant->name }}"
+                                                        style="width:40px" />
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
@@ -123,7 +121,7 @@
                         <div class="row mb-4">
                             <div class="col-12">
 
-                                <input type="submit" value="Publish Plant" class="btn btn-success float-right">
+                                <input type="submit" value="Update Plants" class="btn btn-success float-right">
                             </div>
                         </div>
                     </form>
@@ -156,6 +154,10 @@
         <script src="{{ asset('assets/plugins/codemirror/mode/htmlmixed/htmlmixed.js') }}"></script>
 
 
+        <script src="{{ asset('assets/plugins/filterizr/jquery.filterizr.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/ekko-lightbox/ekko-lightbox.min.js') }}"></script>
+
+
         <script>
             $(function() {
                 bsCustomFileInput.init();
@@ -175,5 +177,23 @@
             })
         </script>
 
+    <script>
+        $(function() {
+            $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true
+                });
+            });
+
+            $('.filter-container').filterizr({
+                gutterPixels: 3
+            });
+            $('.btn[data-filter]').on('click', function() {
+                $('.btn[data-filter]').removeClass('active');
+                $(this).addClass('active');
+            });
+        })
+    </script>
 
     @endpush

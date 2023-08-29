@@ -260,6 +260,9 @@ visibility: visible;
 }
 
 
+.underline{
+    text-decoration: none !important;
+  }
 
 .homesection .banner-container{
     display: flex;

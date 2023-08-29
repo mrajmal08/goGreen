@@ -61,6 +61,16 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label>Plant Category</label>
+                                        <select class="form-control" name="cat_id" style="width: 100%;">
+                                          <option {{ $plant->cat_id? 'selected':'' }} value="{{ $plant->cat_id }}" >{{ DB::table('plants_categories')->where('id',$plant->cat_id)->pluck('name')->first() }} </option>
+                                           @foreach($categories as $category)
+                                            <option value="{{ $category->id}} ">{{ $category->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label>Plant Type</label>
@@ -72,15 +82,6 @@
                                             </select>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label>Plant Category</label>
-                                            <select class="form-control" name="cat_id" style="width: 100%;">
-                                              <option {{ $plant->cat_id? 'selected':'' }} value="{{ $plant->cat_id }}" >{{ DB::table('plants_categories')->where('id',$plant->cat_id)->pluck('name')->first() }} </option>
-                                               @foreach($categories as $category)
-                                                <option value="{{ $category->id}} ">{{ $category->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
                                         <div class="form-group">
                                             <label for="inputName">Plant Name</label>
                                             <input type="text" id="inputName" name="name" value="{{ $plant->name}}" class="form-control">
@@ -96,7 +97,10 @@
                                             <label for="inputTitle">Plant Price</label>
                                             <input type="number" id="inputTitle" name="price" value="{{$plant->price}}" class="form-control">
                                         </div>
-
+                                        <div class="form-group">
+                                            <label for="inputTitle">Discounted Price</label>
+                                            <input type="number" id="inputTitle" name="discount_price" value="{{$plant->discount_price}}" class="form-control">
+                                        </div>
 
                                         <div class="form-group">
                                             <label for="inputClientCompany">Feature image</label>

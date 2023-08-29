@@ -7,18 +7,53 @@ use Illuminate\Http\Request;
 
 class WellcomeController extends Controller
 {
-    public function types_of_plants(){
-        return view('frontend.types_of_plants');
+    public function types_of_plants(Request $request){
+
+        if($request->id){
+            $plants = DB::table('plants')->where('cat_id', $request->id)->get();
+        }else{
+            $plants = DB::table('plants')->get();
+        }
+        $types = DB::table('plants_types')->get();
+        $categories = DB::table('plants_categories')->get();
+
+        return view('frontend.types_of_plants', compact('types', 'categories', 'plants'));
     }
-    public function plant_by_season(){
-        return view('frontend.plant_by_season');
+    public function plant_by_season(Request $request){
+
+        if($request->id){
+            $plants = DB::table('plants_by_season')->where('type_id', $request->id)->get();
+        }else{
+            $plants = DB::table('plants_by_season')->get();
+        }
+        $types = DB::table('plants_by_season_types')->get();
+
+        return view('frontend.plant_by_season', compact('types', 'plants'));
     }
-    public function plant_by_location(){
-        return view('frontend.plant_by_location');
+    public function plant_by_location(Request $request){
+
+        if($request->id){
+            $plants = DB::table('plants')->where('cat_id', $request->id)->get();
+        }else{
+            $plants = DB::table('plants')->get();
+        }
+        $types = DB::table('plants_types')->get();
+        $categories = DB::table('plants_categories')->get();
+
+        return view('frontend.plant_by_location', compact('types', 'categories', 'plants'));
     }
 
-    public function flowering_plants(){
-        return view('frontend.flowering_plants');
+    public function flowering_plants(Request $request){
+
+        if($request->id){
+            $plants = DB::table('flowering_plants')->where('type_id', $request->id)->get();
+        }else{
+            $plants = DB::table('flowering_plants')->get();
+        }
+        $types = DB::table('plants_types')->get();
+
+        return view('frontend.flowering_plants',  compact('types', 'plants'));
+
     }
     public function flower_seeds(){
         return view('frontend.flower_seeds');
@@ -37,16 +72,20 @@ class WellcomeController extends Controller
     }
     public function plants(Request $request){
 
-        // dd($request->id);
         if($request->id){
             $plants = DB::table('plants')->where('cat_id', $request->id)->get();
-            // dd($plants);
         }else{
             $plants = DB::table('plants')->get();
         }
         $types = DB::table('plants_types')->get();
         $categories = DB::table('plants_categories')->get();
         return view('frontend.plants', compact('types', 'categories', 'plants'));
+    }
+
+    public function plant_detail($id){
+
+        $plant = DB::table('plants')->where('id', $id)->first();
+        return view('frontend.plant_detail', compact('plant'));
     }
 
     public function seeds(){
@@ -110,7 +149,8 @@ class WellcomeController extends Controller
         return view('frontend.delivery_person');
     }
     public function deals(){
-        return view('frontend.deals');
+        $plants = DB::table('plants')->whereNotNull('discount_price')->get();
+        return view('frontend.deals', compact('plants'));
     }
 
 

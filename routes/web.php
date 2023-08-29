@@ -22,7 +22,9 @@ Auth::routes();
 
 Route::get('/home', [Web\HomeController::class, 'index'])->name('home');
 Route::get('/types-of-plants', [Web\WellcomeController::class, 'types_of_plants'])->name('types.of.plants');
+
 Route::get('/plants-by-season', [Web\WellcomeController::class, 'plant_by_season'])->name('plant.by.season');
+
 Route::get('/plants-by-location', [Web\WellcomeController::class, 'plant_by_location'])->name('plant.by.location');
 Route::get('/flowering-plants', [Web\WellcomeController::class, 'flowering_plants'])->name('flowering.plants');
 Route::get('/flower-seeds', [Web\WellcomeController::class, 'flower_seeds'])->name('flower.seeds');
@@ -32,6 +34,7 @@ Route::get('/spray', [Web\WellcomeController::class, 'spray'])->name('spray');
 Route::get('/soil-fertilizer', [Web\WellcomeController::class, 'soil_fertilizer'])->name('soil.fertilizer');
 
 Route::get('/plants', [Web\WellcomeController::class, 'plants'])->name('plants');
+Route::get('/plant-detail/{id}', [Web\WellcomeController::class, 'plant_detail'])->name('plant.detail');
 
 Route::get('/seeds', [Web\WellcomeController::class, 'seeds'])->name('seeds');
 Route::get('/accessories', [Web\WellcomeController::class, 'accessories'])->name('accessories');
@@ -74,3 +77,20 @@ Route::post('/plants/store', [web\PlantController::class, 'store'])->name('plant
 Route::get('/plants/edit/{id}', [web\PlantController::class, 'edit'])->name('plants.edit');
 Route::post('/plants/update/{id}', [web\PlantController::class, 'update'])->name('plants.update');
 Route::get('/plants/delete/{id}', [web\PlantController::class, 'destroy'])->name('plants.delete');
+
+
+//Plants by season Route
+Route::get('/admin/season', [web\SeasonController::class, 'index'])->name('season.index');
+Route::get('/season/create', [web\SeasonController::class, 'create'])->name('season.create');
+Route::post('/season/store', [web\SeasonController::class, 'store'])->name('season.store');
+Route::get('/season/edit/{id}', [web\SeasonController::class, 'edit'])->name('season.edit');
+Route::post('/season/update/{id}', [web\SeasonController::class, 'update'])->name('season.update');
+Route::get('/season/delete/{id}', [web\SeasonController::class, 'destroy'])->name('season.delete');
+
+//Plants by Flower Route
+Route::get('/admin/flower', [web\FlowerController::class, 'index'])->name('flower.index');
+Route::get('/flower/create', [web\FlowerController::class, 'create'])->name('flower.create');
+Route::post('/flower/store', [web\FlowerController::class, 'store'])->name('flower.store');
+Route::get('/flower/edit/{id}', [web\FlowerController::class, 'edit'])->name('flower.edit');
+Route::post('/flower/update/{id}', [web\FlowerController::class, 'update'])->name('flower.update');
+Route::get('/flower/delete/{id}', [web\FlowerController::class, 'destroy'])->name('flower.delete');

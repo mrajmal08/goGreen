@@ -788,6 +788,10 @@ section{
   line-height: 0;
 }
 
+.underline{
+    text-decoration: none !important;
+}
+
 .footer_wrapper .copyright-section a {
   color: var(--primary-text);
   font-weight: 600;

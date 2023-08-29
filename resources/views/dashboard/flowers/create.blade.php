@@ -22,7 +22,7 @@
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="{{ route('plants.index') }}">All
-                                        Plants</a></li>
+                                    Flowering Plants    </a></li>
                                     <li class="breadcrumb-item active">Plant Post</li>
                                 </ol>
                             </div>
@@ -44,7 +44,7 @@
                         @endforeach
                     @endif
 
-                    <form method="POST" action="{{ route('plants.store') }}" enctype="multipart/form-data" id="quickForm">
+                    <form method="POST" action="{{ route('flower.store') }}" enctype="multipart/form-data" id="quickForm">
                         @CSRF
                         <div class="row">
                             <div class="col-md-12">
@@ -60,17 +60,6 @@
                                         </div>
                                     </div>
                                     <div class="card-body">
-
-
-                                        <div class="form-group">
-                                            <label>Plant Category</label>
-                                            <select class="form-control" name="cat_id" style="width: 100%;">
-                                                <option value="">--select category --</option>
-                                               @foreach($categories as $category)
-                                                <option value="{{ $category->id}} ">{{ $category->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
 
                                         <div class="form-group">
                                             <label>Plant Type</label>

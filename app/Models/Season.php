@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Plant extends Model
+class Season extends Model
 {
     use HasFactory;
-    protected $table = "plants";
+    protected $table = "plants_by_season";
     protected $fillable = [
         'name',
         'description',

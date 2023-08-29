@@ -76,6 +76,7 @@ class PlantController extends Controller
         $data['type_id'] = $request->type_id;
         $data['cat_id'] = $request->cat_id;
         $data['price'] = $request->price;
+        $data['discount_price'] = $request->discount_price;
         $data['description'] = $request->description;
         Plant::create($data);
 
@@ -153,6 +154,9 @@ class PlantController extends Controller
         }
         if ($request->price) {
             $plants->price = $request->price;
+        }
+        if ($request->discount_price) {
+            $plants->discount_price = $request->discount_price;
         }
         if ($request->location) {
             $plants->location = $request->location;

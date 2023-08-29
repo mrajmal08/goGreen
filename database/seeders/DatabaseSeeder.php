@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
             // RoleSeeder::class,
             // PantsCatSeeder::class,
             // PantsTypeSeeder::class,
+            FlowerPlantsSeeder::class,
+            SeasonPlantsSeeder::class,
+
         ]);
     }
 }

@@ -46,15 +46,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
+                                <a href="{{ route('season.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Plants by Season</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                                <a href="{{ route('flower.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Plants by location</p>
+                                    <p>Flowering Plants</p>
                                 </a>
                             </li>
                         </ul>
