@@ -70,21 +70,9 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                <a href="{{ route('seeds.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Flower Seeds</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Vegetable Seeds</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Fruit Seeds</p>
+                                    <p>Seeds</p>
                                 </a>
                             </li>
                         </ul>

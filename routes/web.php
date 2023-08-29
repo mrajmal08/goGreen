@@ -37,6 +37,9 @@ Route::get('/plants', [Web\WellcomeController::class, 'plants'])->name('plants')
 Route::get('/plant-detail/{id}', [Web\WellcomeController::class, 'plant_detail'])->name('plant.detail');
 
 Route::get('/seeds', [Web\WellcomeController::class, 'seeds'])->name('seeds');
+Route::get('/seeds-detail/{id}', [Web\WellcomeController::class, 'seeds_detail'])->name('seeds.detail');
+
+
 Route::get('/accessories', [Web\WellcomeController::class, 'accessories'])->name('accessories');
 Route::get('/gardening-tools', [Web\WellcomeController::class, 'gardening_tools'])->name('gardening.tools');
 Route::get('/seed-starter', [Web\WellcomeController::class, 'seed_starter'])->name('seed.starter');
@@ -94,3 +97,11 @@ Route::post('/flower/store', [web\FlowerController::class, 'store'])->name('flow
 Route::get('/flower/edit/{id}', [web\FlowerController::class, 'edit'])->name('flower.edit');
 Route::post('/flower/update/{id}', [web\FlowerController::class, 'update'])->name('flower.update');
 Route::get('/flower/delete/{id}', [web\FlowerController::class, 'destroy'])->name('flower.delete');
+
+//Plants by Flower Route
+Route::get('/admin/seeds', [web\SeedsController::class, 'index'])->name('seeds.index');
+Route::get('/seeds/create', [web\SeedsController::class, 'create'])->name('seeds.create');
+Route::post('/seeds/store', [web\SeedsController::class, 'store'])->name('seeds.store');
+Route::get('/seeds/edit/{id}', [web\SeedsController::class, 'edit'])->name('seeds.edit');
+Route::post('/seeds/update/{id}', [web\SeedsController::class, 'update'])->name('seeds.update');
+Route::get('/seeds/delete/{id}', [web\SeedsController::class, 'destroy'])->name('seeds.delete');
