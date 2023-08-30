@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFloweringPlantsTable extends Migration
+class CreatePotsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFloweringPlantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('flowering_plants', function (Blueprint $table) {
+        Schema::create('pots', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->longText('description')->nullable();
@@ -21,6 +21,7 @@ class CreateFloweringPlantsTable extends Migration
             $table->string('price')->nullable();
             $table->string('discount_price')->nullable();
             $table->string('photo')->nullable();
+            $table->unsignedBigInteger('page_id');
             $table->unsignedBigInteger('type_id');
             $table->timestamps();
         });
@@ -33,6 +34,6 @@ class CreateFloweringPlantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('flowering_plants');
+        Schema::dropIfExists('pots');
     }
 }

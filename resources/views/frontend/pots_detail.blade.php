@@ -14,17 +14,17 @@
     <div class="box">
         <div class="images">
             <div class="img-holder active">
-                <img src="{{ asset('assets/plantsFiles') . '/' . $plant->photo }}" height="100%">
+                <img src="{{ asset('assets/potsFiles') . '/' . $pots->photo }}" height="100%">
             </div>
         </div>
         <div class="basic-info">
-            <h1>{{ $plant->name }}</h1>
-            <div class="location">Location: <span>{{ DB::table('plants_types')->where('id',$plant->type_id)->pluck('name')->first() }}</span></div>
+            <h1>{{ $pots->name }}</h1>
+            <div class="location">Location: <span>{{ DB::table('pots_types')->where('id',$pots->type_id)->pluck('name')->first() }}</span></div>
         </div>
         <div class="description">
             <h2>Description:</h2>
-            <p> {!! $plant->description !!}</p>
-            <span>Rs.{{ $plant->price }}</span>
+            <p> {!! $pots->description !!}</p>
+            <span>Rs.{{ $pots->price }}</span>
         </div>
         <div class=""></div>
         <div class="buttons">

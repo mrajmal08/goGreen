@@ -192,22 +192,52 @@ class WellcomeController extends Controller
 
         return view('frontend.seed_starter', compact('types', 'categories', 'accessories'));
     }
-    public function pots()
+    public function pots(Request $request)
     {
-        return view('frontend.pots');
+        if ($request->id) {
+            $pots = DB::table('pots')->where('type_id', $request->id)->get();
+        } else {
+            $pots = DB::table('pots')->where('page_id', 1)->get();
+        }
+        $types = DB::table('pots_types')->get();
+        return view('frontend.pots', compact('types', 'pots'));
     }
-    public function types_of_pots()
+    public function pots_detail($id)
     {
-        return view('frontend.types_of_pots');
+        $pots = DB::table('pots')->where('id', $id)->first();
+        return view('frontend.pots_detail', compact('pots'));
     }
-    public function growing_bags()
+    public function types_of_pots(Request $request)
     {
-        return view('frontend.growing_bags');
+        if ($request->id) {
+            $pots = DB::table('pots')->where('type_id', $request->id)->get();
+        } else {
+            $pots = DB::table('pots')->where('page_id', 2)->get();
+        }
+        $types = DB::table('pots_types')->get();
+        return view('frontend.types_of_pots', compact('types', 'pots'));
     }
-    public function steel_pots()
+    public function growing_bags(Request $request)
     {
-        return view('frontend.steel_pots');
+        if ($request->id) {
+            $pots = DB::table('pots')->where('type_id', $request->id)->get();
+        } else {
+            $pots = DB::table('pots')->where('page_id', 3)->get();
+        }
+        $types = DB::table('pots_types')->get();
+        return view('frontend.growing_bags', compact('types', 'pots'));
     }
+    public function steel_pots(Request $request)
+    {
+        if ($request->id) {
+            $pots = DB::table('pots')->where('type_id', $request->id)->get();
+        } else {
+            $pots = DB::table('pots')->where('page_id', 4)->get();
+        }
+        $types = DB::table('pots_types')->get();
+        return view('frontend.steel_pots', compact('types', 'pots'));
+    }
+
     public function garden_core()
     {
         return view('frontend.garden_core');

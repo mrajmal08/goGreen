@@ -16,7 +16,7 @@ class CreatePlantsBySeasonTable extends Migration
         Schema::create('plants_by_season', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('location')->nullable();
             $table->string('price')->nullable();
             $table->string('discount_price')->nullable();

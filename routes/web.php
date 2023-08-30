@@ -48,7 +48,11 @@ Route::get('/accessories-detail/{id}', [Web\WellcomeController::class, 'accessor
 
 Route::get('/gardening-tools', [Web\WellcomeController::class, 'gardening_tools'])->name('gardening.tools');
 Route::get('/seed-starter', [Web\WellcomeController::class, 'seed_starter'])->name('seed.starter');
+
 Route::get('/pots', [Web\WellcomeController::class, 'pots'])->name('pots');
+Route::get('/pots-detail/{id}', [Web\WellcomeController::class, 'pots_detail'])->name('pots.detail');
+
+
 Route::get('/types-of-pots', [Web\WellcomeController::class, 'types_of_pots'])->name('types.of.pots');
 Route::get('/growing-bags', [Web\WellcomeController::class, 'growing_bags'])->name('growing.bags');
 Route::get('/steel-pots', [Web\WellcomeController::class, 'steel_pots'])->name('steel.pots');
@@ -119,10 +123,19 @@ Route::get('/fertilizer/edit/{id}', [web\FertilizeController::class, 'edit'])->n
 Route::post('/fertilizer/update/{id}', [web\FertilizeController::class, 'update'])->name('fertilizer.update');
 Route::get('/fertilizer/delete/{id}', [web\FertilizeController::class, 'destroy'])->name('fertilizer.delete');
 
-//Soil and Fertilizer Route
+//Accessories Route
 Route::get('/admin/accessories', [web\AccessoriesController::class, 'index'])->name('accessories.index');
 Route::get('/accessories/create', [web\AccessoriesController::class, 'create'])->name('accessories.create');
 Route::post('/accessories/store', [web\AccessoriesController::class, 'store'])->name('accessories.store');
 Route::get('/accessories/edit/{id}', [web\AccessoriesController::class, 'edit'])->name('accessories.edit');
 Route::post('/accessories/update/{id}', [web\AccessoriesController::class, 'update'])->name('accessories.update');
 Route::get('/accessories/delete/{id}', [web\AccessoriesController::class, 'destroy'])->name('accessories.delete');
+
+
+//Pots Route
+Route::get('/admin/pots', [web\PotController::class, 'index'])->name('pots.index');
+Route::get('/pots/create', [web\PotController::class, 'create'])->name('pots.create');
+Route::post('/pots/store', [web\PotController::class, 'store'])->name('pots.store');
+Route::get('/pots/edit/{id}', [web\PotController::class, 'edit'])->name('pots.edit');
+Route::post('/pots/update/{id}', [web\PotController::class, 'update'])->name('pots.update');
+Route::get('/pots/delete/{id}', [web\PotController::class, 'destroy'])->name('pots.delete');

@@ -23,7 +23,7 @@
         </div>
         <div class="description">
             <h2>Description:</h2>
-            <p> {{ $plant->description }}</p>
+            <p> {!! $plant->description !!}</p>
             <span>Rs.{{ $plant->price }}</span>
         </div>
         <div class=""></div>

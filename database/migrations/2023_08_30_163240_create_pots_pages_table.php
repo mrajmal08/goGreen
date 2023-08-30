@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFertilizerTable extends Migration
+class CreatePotsPagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateFertilizerTable extends Migration
      */
     public function up()
     {
-        Schema::create('fertilizer', function (Blueprint $table) {
+        Schema::create('pots_pages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('description')->nullable();
-            $table->string('price')->nullable();
-            $table->string('discount_price')->nullable();
-            $table->string('photo')->nullable();
-            $table->unsignedBigInteger('type_id');
+            $table->string('page');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateFertilizerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fertilizer');
+        Schema::dropIfExists('pots_pages');
     }
 }

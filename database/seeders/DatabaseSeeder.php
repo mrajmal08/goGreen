@@ -23,7 +23,9 @@ class DatabaseSeeder extends Seeder
             // SeedTypesSeeder::class,
             // FertilizerTypesSeeder::class,
             // AccessoryCatSeeder::class,
-            // AccessoryTypesSeeder::class
+            // AccessoryTypesSeeder::class,
+            // PotsPagesSeeder::class,
+            // PotsTypesSeeder::class,
 
 
         ]);
