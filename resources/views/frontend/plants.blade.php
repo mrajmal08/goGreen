@@ -89,7 +89,6 @@
         </section>
 
 
-
         <div class="sidebar">
             <h1>Plants by location</h1>
             <ol>

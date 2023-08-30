@@ -28,12 +28,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Flowering Plants</h1>
+                                <h1>Siol and Fertilizer</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="{{ route('season.index') }}">Home</a></li>
-                                    <li class="breadcrumb-item active">Flowering Plants</li>
+                                    <li class="breadcrumb-item active">Siol and Fertilizer</li>
                                 </ol>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="{{ route('flower.create') }}" class="btn btn-success">Add New Plant </a>
+                                        <a href="{{ route('fertilizer.create') }}" class="btn btn-success">Add New Fertilizer </a>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
@@ -59,28 +59,26 @@
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
                                                     <th>Type</th>
-                                                    <th>Category</th>
                                                     <th>Photo</th>
                                                     <th>Action</th>
 
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($flowers as $item)
+                                                @foreach ($fertilizers as $item)
                                                     <tr>
                                                         <td>{{ $item->name }}</td>
                                                         <td>{{ $item->price }}</td>
                                                         <td>{{ $item->discount_price }}</td>
-                                                        <td>{{ DB::table('flowering_plants_types')->where('id',$item->type_id)->pluck('name')->first() }}</td>
-                                                        <td>{{ DB::table('flowering_plants_types')->where('id',$item->type_id)->pluck('location')->first() }}</td>
+                                                        <td>{{ DB::table('fertilizer_types')->where('id',$item->type_id)->pluck('name')->first() }}</td>
 
                                                         <td>
                                                             <div class="">
-                                                                <a href="{{ asset('assets/flowersFiles') . '/' . $item->photo }}?text=1"
+                                                                <a href="{{ asset('assets/fertilizersFiles') . '/' . $item->photo }}?text=1"
                                                                     data-toggle="lightbox"
                                                                     data-title="{{ $item->name }}"
                                                                     data-gallery="gallery">
-                                                                    <img src="{{ asset('assets/flowersFiles') . '/' . $item->photo }}?text=1"
+                                                                    <img src="{{ asset('assets/fertilizersFiles') . '/' . $item->photo }}?text=1"
                                                                         class="img-fluid" alt="{{ $item->title }}"
                                                                         style="width:40px" />
                                                                 </a>
@@ -88,11 +86,11 @@
                                                         </td>
 
                                                         <td>
-                                                            <a href="{{ route('flower.edit', [$item->id]) }}"
+                                                            <a href="{{ route('fertilizer.edit', [$item->id]) }}"
                                                                 class="btn btn-warning btn-sm">
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
-                                                            <a href="{{ route('flower.delete', [$item->id]) }}"
+                                                            <a href="{{ route('fertilizer.delete', [$item->id]) }}"
                                                                 class="btn btn-danger btn-sm delete-btn">
                                                                 <i class="fas fa-trash"></i>
                                                             </a>
@@ -106,7 +104,6 @@
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
                                                     <th>Type</th>
-                                                    <th>Category</th>
                                                     <th>Photo</th>
                                                     <th>Action</th>
 

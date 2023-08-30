@@ -31,7 +31,9 @@ Route::get('/flower-seeds', [Web\WellcomeController::class, 'flower_seeds'])->na
 Route::get('/fruit-seeds', [Web\WellcomeController::class, 'fruit_seeds'])->name('fruit.seeds');
 Route::get('/vegetable-seeds', [Web\WellcomeController::class, 'vegetable_seeds'])->name('vegetable.seeds');
 Route::get('/spray', [Web\WellcomeController::class, 'spray'])->name('spray');
+
 Route::get('/soil-fertilizer', [Web\WellcomeController::class, 'soil_fertilizer'])->name('soil.fertilizer');
+Route::get('/fertilizer-detail/{id}', [Web\WellcomeController::class, 'fertilizer_detail'])->name('fertilizer.detail');
 
 Route::get('/plants', [Web\WellcomeController::class, 'plants'])->name('plants');
 Route::get('/plant-detail/{id}', [Web\WellcomeController::class, 'plant_detail'])->name('plant.detail');
@@ -98,10 +100,18 @@ Route::get('/flower/edit/{id}', [web\FlowerController::class, 'edit'])->name('fl
 Route::post('/flower/update/{id}', [web\FlowerController::class, 'update'])->name('flower.update');
 Route::get('/flower/delete/{id}', [web\FlowerController::class, 'destroy'])->name('flower.delete');
 
-//Plants by Flower Route
+//Seeds Route
 Route::get('/admin/seeds', [web\SeedsController::class, 'index'])->name('seeds.index');
 Route::get('/seeds/create', [web\SeedsController::class, 'create'])->name('seeds.create');
 Route::post('/seeds/store', [web\SeedsController::class, 'store'])->name('seeds.store');
 Route::get('/seeds/edit/{id}', [web\SeedsController::class, 'edit'])->name('seeds.edit');
 Route::post('/seeds/update/{id}', [web\SeedsController::class, 'update'])->name('seeds.update');
 Route::get('/seeds/delete/{id}', [web\SeedsController::class, 'destroy'])->name('seeds.delete');
+
+//Soil and Fertilizer Route
+Route::get('/admin/fertilizer', [web\FertilizeController::class, 'index'])->name('fertilizer.index');
+Route::get('/fertilizer/create', [web\FertilizeController::class, 'create'])->name('fertilizer.create');
+Route::post('/fertilizer/store', [web\FertilizeController::class, 'store'])->name('fertilizer.store');
+Route::get('/fertilizer/edit/{id}', [web\FertilizeController::class, 'edit'])->name('fertilizer.edit');
+Route::post('/fertilizer/update/{id}', [web\FertilizeController::class, 'update'])->name('fertilizer.update');
+Route::get('/fertilizer/delete/{id}', [web\FertilizeController::class, 'destroy'])->name('fertilizer.delete');

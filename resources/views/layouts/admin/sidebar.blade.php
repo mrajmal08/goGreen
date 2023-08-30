@@ -79,7 +79,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="" class="nav-link">
                             <i class="nav-icon fas fa-tree"></i>
                             <p>
                                 Soil and Fertilizer
@@ -88,17 +88,11 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                <a href="{{ route('fertilizer.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Organic Fertilizer</p>
+                                    <p>OFertilizer</p>
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Spray</p>
-                                </a>
-                            </li>
+                            </li>   
                         </ul>
                     </li>
 
