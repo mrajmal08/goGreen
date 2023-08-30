@@ -21,7 +21,10 @@ class DatabaseSeeder extends Seeder
             // SeasonPlantsSeeder::class,
             // SeedCatSeeder::class,
             // SeedTypesSeeder::class,
-            FertilizerTypesSeeder::class,
+            // FertilizerTypesSeeder::class,
+            // AccessoryCatSeeder::class,
+            // AccessoryTypesSeeder::class
+
 
         ]);
     }

@@ -43,6 +43,9 @@ Route::get('/seeds-detail/{id}', [Web\WellcomeController::class, 'seeds_detail']
 
 
 Route::get('/accessories', [Web\WellcomeController::class, 'accessories'])->name('accessories');
+Route::get('/accessories-detail/{id}', [Web\WellcomeController::class, 'accessories_detail'])->name('accessories.detail');
+
+
 Route::get('/gardening-tools', [Web\WellcomeController::class, 'gardening_tools'])->name('gardening.tools');
 Route::get('/seed-starter', [Web\WellcomeController::class, 'seed_starter'])->name('seed.starter');
 Route::get('/pots', [Web\WellcomeController::class, 'pots'])->name('pots');
@@ -115,3 +118,11 @@ Route::post('/fertilizer/store', [web\FertilizeController::class, 'store'])->nam
 Route::get('/fertilizer/edit/{id}', [web\FertilizeController::class, 'edit'])->name('fertilizer.edit');
 Route::post('/fertilizer/update/{id}', [web\FertilizeController::class, 'update'])->name('fertilizer.update');
 Route::get('/fertilizer/delete/{id}', [web\FertilizeController::class, 'destroy'])->name('fertilizer.delete');
+
+//Soil and Fertilizer Route
+Route::get('/admin/accessories', [web\AccessoriesController::class, 'index'])->name('accessories.index');
+Route::get('/accessories/create', [web\AccessoriesController::class, 'create'])->name('accessories.create');
+Route::post('/accessories/store', [web\AccessoriesController::class, 'store'])->name('accessories.store');
+Route::get('/accessories/edit/{id}', [web\AccessoriesController::class, 'edit'])->name('accessories.edit');
+Route::post('/accessories/update/{id}', [web\AccessoriesController::class, 'update'])->name('accessories.update');
+Route::get('/accessories/delete/{id}', [web\AccessoriesController::class, 'destroy'])->name('accessories.delete');

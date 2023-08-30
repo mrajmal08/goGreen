@@ -93,7 +93,6 @@ class WellcomeController extends Controller
 
     public function plants(Request $request)
     {
-
         if ($request->id) {
             $plants = DB::table('plants')->where('cat_id', $request->id)->get();
         } else {
@@ -142,7 +141,6 @@ class WellcomeController extends Controller
 
     public function fruit_seeds()
     {
-
         $seeds = DB::table('seeds')->whereIn('cat_id', [3, 10, 11, 12])->get();
         $types = DB::table('seeds_types')->get();
         $categories = DB::table('seeds_categories')->get();
@@ -152,7 +150,6 @@ class WellcomeController extends Controller
 
     public function vegetable_seeds()
     {
-
         $seeds = DB::table('seeds')->whereIn('cat_id', [2, 7, 8, 9])->get();
         $types = DB::table('seeds_types')->get();
         $categories = DB::table('seeds_categories')->get();
@@ -160,17 +157,40 @@ class WellcomeController extends Controller
         return view('frontend.vegetable_seeds', compact('types', 'categories', 'seeds'));
     }
 
-    public function accessories()
+    public function accessories(Request $request)
     {
+        if ($request->id) {
+            $accessories = DB::table('accessories')->where('cat_id', $request->id)->get();
+        } else {
+            $accessories = DB::table('accessories')->whereIn('cat_id', [1, 2])->get();
+        }
+        $types = DB::table('accessories_types')->get();
+        $categories = DB::table('accessories_cat')->get();
+        return view('frontend.accessories', compact('types', 'categories', 'accessories'));
+    }
+    public function accessories_detail($id){
+
+        $accessories = DB::table('accessories')->where('id', $id)->first();
+        return view('frontend.accessories_detail', compact('accessories'));
+
         return view('frontend.accessories');
     }
+
     public function gardening_tools()
     {
         return view('frontend.gardening_tools');
     }
-    public function seed_starter()
+    public function seed_starter(Request $request)
     {
-        return view('frontend.seed_starter');
+        if ($request->id) {
+            $accessories = DB::table('accessories')->where('cat_id', $request->id)->get();
+        } else {
+            $accessories = DB::table('accessories')->whereIn('cat_id', [3, 4, 5])->get();
+        }
+        $types = DB::table('accessories_types')->get();
+        $categories = DB::table('accessories_cat')->get();
+
+        return view('frontend.seed_starter', compact('types', 'categories', 'accessories'));
     }
     public function pots()
     {

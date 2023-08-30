@@ -90,9 +90,9 @@
                             <li class="nav-item">
                                 <a href="{{ route('fertilizer.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>OFertilizer</p>
+                                    <p>Soil and Fertilizer</p>
                                 </a>
-                            </li>   
+                            </li>
                         </ul>
                     </li>
 
@@ -106,15 +106,9 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                <a href="{{ route('accessories.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Gardening Tools</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Seed Starter</p>
+                                    <p>Accessories</p>
                                 </a>
                             </li>
                         </ul>

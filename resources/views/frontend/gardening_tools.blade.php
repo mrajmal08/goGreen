@@ -15,13 +15,13 @@
         </a>
         <a href="Hedge Trimmer accesseries.html" class="circle-link">
             <div class="circle-image">
-                <img src="accesrimg/hedge trimmer.jpg"alt="Image 1">
+                <img src="{{ asset('images/accesrimg/hedge trimmer.jpg')}}"alt="Image 1">
             </div>
             <p>Hedge Trimmer</p>
         </a>
         <a href="tiller accesseries.html" class="circle-link">
             <div class="circle-image">
-                <img src="accesrimg/tiller.jpg" alt="Image 2">
+                <img src="{{ asset('images/accesrimg/tiller.jpg')}}" alt="Image 2">
             </div>
             <p>Tiller</p>
         </a>
