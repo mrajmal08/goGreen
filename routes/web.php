@@ -14,13 +14,10 @@ use App\Http\Controllers as Web;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', [Web\HomeController::class, 'index'])->name('home');
+Route::get('/', [Web\WellcomeController::class, 'homepage'])->name('homepage');
 Route::get('/types-of-plants', [Web\WellcomeController::class, 'types_of_plants'])->name('types.of.plants');
 
 Route::get('/plants-by-season', [Web\WellcomeController::class, 'plant_by_season'])->name('plant.by.season');

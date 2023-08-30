@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\DB;
 
 class WellcomeController extends Controller
 {
+
+    public function homepage(){
+        $plants = DB::table('plants')->get();
+
+        return view('welcome', compact('plants'));
+    }
+
     public function types_of_plants(Request $request)
     {
 

@@ -7,7 +7,7 @@
                     <div class="box" style="background: url({{ asset('images/images/slider1.jpg') }});">
                         <div class="content">
                             <h3>Go Green Nursery Now </h3>
-                            <a href="/" class="btn">shop now</a>
+                            <a href="{{route('plants')}}" class="btn">shop now</a>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <div class="content">
 
                             <h3>Plants make people happy</h3>
-                            <a href="Plants.html" class="btn">shop now</a>
+                            <a href="{{route('plants')}}" class="btn">shop now</a>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                         <div class="content">
 
                             <h3>decorate your home now</h3>
-                            <a href="gardendecore.html" class="btn">shop now</a>
+                            <a href="{{ route('flowering.plants')}}" class="btn">shop now</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <div class="content">
 
                             <h3>Landscaping now</h3>
-                            <a href="landscapinng.html" class="btn">shop now</a>
+                            <a href="{{ route('seeds') }}" class="btn">shop now</a>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                         <div class="content">
 
                             <h3>Seeds now</h3>
-                            <a href="seeds.html" class="btn">shop now</a>
+                            <a href="{{ route('seeds') }}" class="btn">shop now</a>
                         </div>
                     </div>
                 </div>

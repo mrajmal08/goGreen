@@ -54,7 +54,7 @@
                             <a href="#" class="fas fa-heart"></a>
 
                         </div>
-                        <a class="underline" href="{{ route('plants.show', [$plant->id]) }}">
+                        <a class="underline" href="{{ route('plant.detail', [$plant->id]) }}">
                             <img src="{{ asset('assets/plantsFiles') . '/' . $plant->photo }}" alt="">
                             <h3>{{ $plant->name }}</h3>
                         </a>
