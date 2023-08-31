@@ -136,3 +136,9 @@ Route::post('/pots/store', [web\PotController::class, 'store'])->name('pots.stor
 Route::get('/pots/edit/{id}', [web\PotController::class, 'edit'])->name('pots.edit');
 Route::post('/pots/update/{id}', [web\PotController::class, 'update'])->name('pots.update');
 Route::get('/pots/delete/{id}', [web\PotController::class, 'destroy'])->name('pots.delete');
+
+//Add to cart routes
+Route::get('cart', [web\CartController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [web\CartController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [web\CartController::class, 'update'])->name('update.cart');
+Route::delete('remove-from-cart', [web\CartController::class, 'remove'])->name('remove.from.cart');
