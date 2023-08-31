@@ -130,17 +130,17 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                @else
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('orders') }}" class="nav-link">
                         <i class="nav-icon far fa-user"></i>
                         <p>
                             My Orders
                         </p>
                     </a>
                 </li>
+                    </li>
+                @else
                 @endif
                 <div class="dropdown-divider"></div>
             </ul>

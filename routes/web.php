@@ -16,7 +16,7 @@ use App\Http\Controllers as Web;
 
 Auth::routes();
 
-Route::get('/home', [Web\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [Web\HomeController::class, 'index'])->name('home');
 Route::get('/', [Web\WellcomeController::class, 'homepage'])->name('homepage');
 Route::get('/types-of-plants', [Web\WellcomeController::class, 'types_of_plants'])->name('types.of.plants');
 
@@ -142,3 +142,10 @@ Route::get('cart', [web\CartController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [web\CartController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [web\CartController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [web\CartController::class, 'remove'])->name('remove.from.cart');
+
+Route::get('check-out', [web\CartController::class, 'check_out'])->name('check.out');
+Route::post('cart-store', [web\CartController::class, 'cart_store'])->name('cart.store');
+
+
+Route::get('/admin/orders', [web\CartController::class, 'orders'])->name('orders');
+Route::post('/admin/updateStatus', [web\CartController::class, 'updateStatus'])->name('updateStatus');

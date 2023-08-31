@@ -9,6 +9,12 @@
     @include('layouts.welcome.slider')
     <!-- banner section starts  -->
 
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <section class="banner-container">
 
         <div class="banner">

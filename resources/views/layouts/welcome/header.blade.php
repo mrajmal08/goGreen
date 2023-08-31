@@ -16,7 +16,15 @@
                         position: relative;
                         bottom: 19px;">{{ count((array) session('cart')) }}</span></a>
                     <a href="#"><i class="fas fa-heart"></i></a>
-                    <a href="{{ route('login') }}"><i class="fas fa-user-circle"></i></a>
+                    @if(auth()->check())
+                    <form action="/logout" method="post">
+                        @csrf
+                    <a href="" onclick="event.preventDefault(); this.closest('form').submit();"><i class="fas fa-user-circle"></i></a>
+                    </form>
+                    @else
+                        <a href="{{ route('login') }}"><i class="fas fa-user-circle"></i></a>
+                    @endif
+
                 </ul>
             </div>
         </div>

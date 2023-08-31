@@ -60,7 +60,7 @@
                     <td colspan="5" class="text-right">
                         <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue
                             Shopping</a>
-                        <button class="btn btn-success">Checkout</button>
+                        <a href="{{ route('check.out')}} " class="btn btn-success">Checkout</a>
                     </td>
                 </tr>
             </tfoot>
@@ -120,8 +120,8 @@
             });
         </script>
 
-
         <script src="{{ asset('js/homescript.js') }}" defer></script>
         <script src="{{ asset('js/script.js') }}" defer></script>
     @endpush
 @endsection
+
