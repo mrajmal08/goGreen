@@ -19,19 +19,19 @@
             <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
                 <h5>Customer Support</h5>
                 <ul class="link-widget p-0">
-                    <li><a href="privacy policy.html">Privacy Policy</a></li>
-                    <li><a href="return polices.html">Return polices</a></li>
-                    <li><a href="office.html">Office product rent</a></li>
+                    <li><a href="{{route('privacy.policy')}}">Privacy Policy</a></li>
+                    <li><a href="return.policy">Return polices</a></li>
+                    <li><a href="{{ route('plants')}}">Office product rent</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">
                 <h5>Quick Links</h5>
                 <ul class="link-widget p-0">
-                    <li><a href="Plants.html">Plants</a></li>
-                    <li><a href="accesssories.html">Accessories</a></li>
-                    <li><a href="gardendecore.html">our services</a></li>
-                    <li><a href="privacy policy.html">Our Polices</a></li>
-                    <li><a href="deals.html">Deals</a></li>
+                    <li><a href="{{ route('plants')}}">Plants</a></li>
+                    <li><a href="{{route('accessories')}}">Accessories</a></li>
+                    <li><a href="{{route('garden.core')}}">our services</a></li>
+                    <li><a href="{{route('privacy.policy')}}">Our Polices</a></li>
+                    <li><a href="{{ route('deals')}} ">Deals</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-sm-6 mb-5 mb-lg-0">

@@ -62,7 +62,7 @@
                             <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
                         </div>
                         <div class="price">Rs.{{ $plant->discount_price }}<span>{{ $plant->price }}</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <a href="{{ route('add.to.cart', $plant->id) }}" class="btn">add to cart</a>
                     </div>
                 @endforeach
             </div>

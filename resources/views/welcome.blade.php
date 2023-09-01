@@ -5,7 +5,6 @@
 @endpush
 
 @section('content')
-
     @include('layouts.welcome.slider')
     <!-- banner section starts  -->
 
@@ -51,7 +50,7 @@
                 </form>
                 <div class="content">
                     <h3>Flower</h3>
-                    <a href="flowering.html" class="btn">shop now</a>
+                    <a href="{{ route('plants') }}" class="btn">shop now</a>
                 </div>
             </div>
             <div class="box">
@@ -64,7 +63,7 @@
                 </form>
                 <div class="content">
                     <h3>Indoor Plants</h3>
-                    <a href="indoor.html" class="btn">shop now</a>
+                    <a href="{{ route('plants') }}" class="btn">shop now</a>
                 </div>
             </div>
             <div class="box">
@@ -78,20 +77,14 @@
                 <div class="content">
 
                     <h3>Outdoor Plants</h3>
-                    <a href="outdoor.html" class="btn">shop now</a>
+                    <a href="{{ route('plants') }}" class="btn">shop now</a>
                 </div>
             </div>
             <div class="box">
                 <img src="{{ asset('images/realimage/image3.jpeg') }}" alt="">
                 <div class="content">
                     <h3>Gift plants</h3>
-                    <form method="GET" action="{{ route('plants') }}">
-                        @csrf
-                        <input type="hidden" name="id" value="3" />
-                        {{-- <button type="submit"> --}}
-                        <a type="submit" class="btn">shop now</a>
-                        {{-- </button> --}}
-                    </form>
+                    <a href="{{ route('plants') }}" class="btn">shop now</a>
                 </div>
             </div>
         </div>
@@ -115,7 +108,7 @@
                         <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
                     </div>
                     <div class="price">Rs.{{ $plant->price }}</div>
-                    <a href="#" class="btn">add to cart</a>
+                    <a href="{{ route('add.to.cart', $plant->id) }}" class="btn">add to cart</a>
                 </div>
             @endforeach
 
