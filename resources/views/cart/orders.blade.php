@@ -58,6 +58,7 @@
                                                         <td>{{ $item->product_name }}</td>
                                                         <td>
                                                             <div class="">
+                                                                @if($item->type == 'plant')
                                                                 <a href="{{ asset('assets/plantsFiles') . '/' . $item->product_photo }}?text=1"
                                                                     data-toggle="lightbox"
                                                                     data-title="{{ $item->product_name }}"
@@ -66,6 +67,43 @@
                                                                         class="img-fluid" alt="{{ $item->product_name }}"
                                                                         style="width:40px" />
                                                                 </a>
+                                                                @elseif($item->type == 'seed')
+                                                                <a href="{{ asset('assets/seedsFiles') . '/' . $item->product_photo }}?text=1"
+                                                                    data-toggle="lightbox"
+                                                                    data-title="{{ $item->product_name }}"
+                                                                    data-gallery="gallery">
+                                                                    <img src="{{ asset('assets/seedsFiles') . '/' . $item->product_photo }}?text=1"
+                                                                        class="img-fluid" alt="{{ $item->product_name }}"
+                                                                        style="width:40px" />
+                                                                </a>
+                                                                @elseif($item->type == 'soil')
+                                                                <a href="{{ asset('assets/fertilizersFiles') . '/' . $item->product_photo }}?text=1"
+                                                                    data-toggle="lightbox"
+                                                                    data-title="{{ $item->product_name }}"
+                                                                    data-gallery="gallery">
+                                                                    <img src="{{ asset('assets/fertilizersFiles') . '/' . $item->product_photo }}?text=1"
+                                                                        class="img-fluid" alt="{{ $item->product_name }}"
+                                                                        style="width:40px" />
+                                                                </a>
+                                                                @elseif($item->type == 'accessory')
+                                                                <a href="{{ asset('assets/accessoriesFiles') . '/' . $item->product_photo }}?text=1"
+                                                                    data-toggle="lightbox"
+                                                                    data-title="{{ $item->product_name }}"
+                                                                    data-gallery="gallery">
+                                                                    <img src="{{ asset('assets/accessoriesFiles') . '/' . $item->product_photo }}?text=1"
+                                                                        class="img-fluid" alt="{{ $item->product_name }}"
+                                                                        style="width:40px" />
+                                                                </a>
+                                                                @elseif($item->type == 'pot')
+                                                                <a href="{{ asset('assets/potsFiles') . '/' . $item->product_photo }}?text=1"
+                                                                    data-toggle="lightbox"
+                                                                    data-title="{{ $item->product_name }}"
+                                                                    data-gallery="gallery">
+                                                                    <img src="{{ asset('assets/potsFiles') . '/' . $item->product_photo }}?text=1"
+                                                                        class="img-fluid" alt="{{ $item->product_name }}"
+                                                                        style="width:40px" />
+                                                                </a>
+                                                                @endif
                                                             </div>
                                                         </td>
                                                         <td>{{ $item->quantity }}</td>

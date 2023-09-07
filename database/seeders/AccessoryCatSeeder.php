@@ -45,6 +45,24 @@ class AccessoryCatSeeder extends Seeder
                 'updated_at' => date("Y-m-d H:i:s"),
 
             ],
+            [
+                'name' => 'Pitch Fork',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+            [
+                'name' => 'Hedge Trimmer',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+            [
+                'name' => 'Tiller',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
         ];
         foreach ($mul_rows as $rows) {
             $insert = DB::table('accessories_cat')->insert($rows);

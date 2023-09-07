@@ -21,6 +21,7 @@
                     <th style="width:10%"></th>
                 </tr>
             </thead>
+
             <tbody>
                 @php $total = 0 @endphp
                 @if (session('cart'))
@@ -29,9 +30,32 @@
                         <tr data-id="{{ $id }}">
                             <td data-th="Product">
                                 <div class="row">
+                                    @if($details['type'] == "plant")
                                     <div class="col-sm-3 hidden-xs"><img
                                             src="{{ asset('assets/plantsFiles') . '/' . $details['image'] }}" width="100"
-                                            height="100" class="img-responsive" /></div>
+                                            height="100" class="img-responsive" />
+                                    </div>
+                                    @elseif($details['type'] == "seed")
+                                    <div class="col-sm-3 hidden-xs"><img
+                                        src="{{ asset('assets/seedsFiles') . '/' . $details['image'] }}" width="100"
+                                        height="100" class="img-responsive" />
+                                </div>
+                                @elseif($details['type'] == "soil")
+                                    <div class="col-sm-3 hidden-xs"><img
+                                        src="{{ asset('assets/fertilizersFiles') . '/' . $details['image'] }}" width="100"
+                                        height="100" class="img-responsive" />
+                                </div>
+                                @elseif($details['type'] == "accessory")
+                                <div class="col-sm-3 hidden-xs"><img
+                                    src="{{ asset('assets/accessoriesFiles') . '/' . $details['image'] }}" width="100"
+                                    height="100" class="img-responsive" />
+                            </div>
+                            @elseif($details['type'] == "pot")
+                            <div class="col-sm-3 hidden-xs"><img
+                                src="{{ asset('assets/potsFiles') . '/' . $details['image'] }}" width="100"
+                                height="100" class="img-responsive" />
+                        </div>
+                                @endif
                                     <div class="col-sm-9">
                                         <h4 class="nomargin">{{ $details['name'] }}</h4>
                                     </div>

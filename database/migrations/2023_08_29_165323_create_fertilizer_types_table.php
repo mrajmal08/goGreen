@@ -16,6 +16,7 @@ class CreateFertilizerTypesTable extends Migration
         Schema::create('fertilizer_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('location')->nullable();
             $table->timestamps();
         });
     }

@@ -62,7 +62,13 @@
                 <span>{{ DB::table('flowering_plants_types')->where('id', $plant->type_id)->pluck('name')->first() }}</span>
             </div>
             <div class="price">Rs.{{ $plant->price }}</div>
-            <a href="#" class="btn">add to cart</a>
+            <form method="GET" action="{{ route('add.to.cart') }}">
+                @csrf
+                <input type="hidden" name="type" value="plant" />
+                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                <a href="#" class="btn"
+                onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+            </form>
         </div>
     @endforeach
     </div>

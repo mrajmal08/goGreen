@@ -139,7 +139,7 @@ Route::get('/pots/delete/{id}', [web\PotController::class, 'destroy'])->name('po
 
 //Add to cart routes
 Route::get('cart', [web\CartController::class, 'cart'])->name('cart');
-Route::get('add-to-cart/{id}', [web\CartController::class, 'addToCart'])->name('add.to.cart');
+Route::get('add-to-cart', [web\CartController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [web\CartController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [web\CartController::class, 'remove'])->name('remove.from.cart');
 

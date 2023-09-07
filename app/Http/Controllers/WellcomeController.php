@@ -171,7 +171,7 @@ class WellcomeController extends Controller
         } else {
             $accessories = DB::table('accessories')->whereIn('cat_id', [1, 2])->get();
         }
-        $types = DB::table('accessories_types')->get();
+        $types = DB::table('accessories_types')->where('location', NULL)->get();
         $categories = DB::table('accessories_cat')->get();
         return view('frontend.accessories', compact('types', 'categories', 'accessories'));
     }
@@ -183,9 +183,17 @@ class WellcomeController extends Controller
         return view('frontend.accessories');
     }
 
-    public function gardening_tools()
+    public function gardening_tools(Request $request)
     {
-        return view('frontend.gardening_tools');
+        if ($request->id) {
+            $accessories = DB::table('accessories')->where('cat_id', $request->id)->get();
+        } else {
+            $accessories = DB::table('accessories')->whereIn('cat_id', [6, 7, 8])->get();
+        }
+        $types = DB::table('accessories_types')->where('location', 'garden')->get();
+        $categories = DB::table('accessories_cat')->get();
+
+        return view('frontend.gardening_tools', compact('types', 'categories', 'accessories'));
     }
     public function seed_starter(Request $request)
     {

@@ -22,6 +22,7 @@ class CreateOrderTable extends Migration
             $table->string('product_photo')->nullable();
             $table->string('quantity');
             $table->string('price');
+            $table->string('type');
             $table->unsignedBigInteger('product_id');
             $table->string('status')->nullable();
             $table->unsignedBigInteger('user_id');

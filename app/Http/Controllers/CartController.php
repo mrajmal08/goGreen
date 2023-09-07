@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Models\Fertilizer;
+use App\Models\Accessory;
 use App\Models\Order;
 use App\Models\Plant;
-use Illuminate\Http\Request;
-use Redirect;
+use App\Models\Seed;
+use App\Models\Pot;
 use Validator;
+use Redirect;
 
 class CartController extends Controller
 {
@@ -25,16 +29,29 @@ class CartController extends Controller
      *
      * @return response()
      */
-    public function addToCart($id)
+    public function addToCart(Request $request)
     {
-        $product = Plant::findOrFail($id);
+        if($request->type == "plant") {
+            $product = Plant::findOrFail($request->id);
+
+        }elseif($request->type == "seed"){
+            $product = Seed::findOrFail($request->id);
+        }
+        elseif($request->type == "soil"){
+            $product = Fertilizer::findOrFail($request->id);
+        }
+        elseif($request->type == "accessory"){
+            $product = Accessory::findOrFail($request->id);
+        }else{
+            $product = Pot::findOrFail($request->id);
+        }
 
         $cart = session()->get('cart', []);
-
-        if (isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+        if (isset($cart[$request->id])) {
+            $cart[$request->id]['quantity']++;
         } else {
-            $cart[$id] = [
+            $cart[$request->id] = [
+                "type" => $request->type,
                 "id" => $product->id,
                 "name" => $product->name,
                 "quantity" => 1,
@@ -109,6 +126,7 @@ class CartController extends Controller
                 $data['phone'] = $request->phone;
                 $data['address'] = $request->address;
                 $data['status'] = "pending";
+                $data['type'] = $data['type'];
                 $data['user_id'] = auth()->user()->id;
                 Order::create($data);
 

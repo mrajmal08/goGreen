@@ -28,7 +28,13 @@
         </div>
         <div class=""></div>
         <div class="buttons">
-            <a href="#" class="cart">add to cart</a>
+            <form method="GET" action="{{ route('add.to.cart') }}">
+                @csrf
+                <input type="hidden" name="type" value="pot" />
+                <input type="hidden" name="id" value="{{ $pots->id }}" />
+                <a href="#" class="btn"
+                onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+            </form>
         </div>
     </div>
 </div>

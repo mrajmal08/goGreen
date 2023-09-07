@@ -105,6 +105,78 @@ class AccessoryTypesSeeder extends Seeder
                 'updated_at' => date("Y-m-d H:i:s"),
 
             ],
+            [
+                'name' => 'Apron',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+            [
+                'name' => 'Ladder',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+            [
+                'name' => 'Shed',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+            [
+                'name' => 'Grass Cutter',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+            [
+                'name' => 'Bucket',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+            [
+                'name' => 'Earthworms',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+            [
+                'name' => 'Scythe',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+
+            [
+                'name' => 'Fertilizer',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+
+            [
+                'name' => 'Seeds',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
+            [
+                'name' => 'Hedge Trimmer',
+                'location' => 'garden',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s"),
+
+            ],
 
         ];
         foreach ($mul_rows as $rows) {
