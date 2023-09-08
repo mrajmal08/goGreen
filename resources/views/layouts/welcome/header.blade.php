@@ -11,15 +11,22 @@
             </form>
             <div class="icons">
                 <ul class="social-network d-flex align-items-center p-0">
-                    <a href="{{ route('cart') }}"><i class="fas fa-shopping-cart"></i><span
+                    <a href="{{ route('cart') }}" style="text-decoration: none;"><i class="fas fa-shopping-cart"></i><span
                             style="    font-size: 15px;
                         position: relative;
                         bottom: 19px;">{{ count((array) session('cart')) }}</span></a>
-                    <a href="#"><i class="fas fa-heart"></i></a>
+
+                    <a href="{{ route('wishlist') }}" style="text-decoration: none;"><i class="fas fa-heart"></i><span
+                        style="    font-size: 15px;
+                    position: relative;
+                    bottom: 19px;
+                    text-decoration: none;">{{ count((array) session('wishlist')) }}</span></a>
+
+                    {{-- <a href="#"><i class="fas fa-heart"></i></a> --}}
                     @if(auth()->check())
                     <form action="/logout" method="post">
                         @csrf
-                    <a href="" onclick="event.preventDefault(); this.closest('form').submit();"><i class="fas fa-user-circle"></i></a>
+                    <a href="" onclick="event.preventDefault(); this.closest('form').submit();"><i class="fas fa-sign-out-alt"></i></a>
                     </form>
                     @else
                         <a href="{{ route('login') }}"><i class="fas fa-user-circle"></i></a>

@@ -84,7 +84,13 @@
                 @foreach ($accessories as $plant)
                     <div class="box" data-name="b-calathea">
                         <div class="icons">
-                            <a href="#" class="fas fa-heart"></a>
+                            <form method="GET" action="{{ route('add.to.wishlist') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="accessory" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="fas fa-heart"
+                                onclick="event.preventDefault(); this.closest('form').submit();"></a>
+                            </form>
                         </div>
                         <a class="underline" href="{{ route('accessories.detail', [$plant->id]) }}">
                             <img src="{{ asset('assets/accessoriesFiles') . '/' . $plant->photo }}" alt="">

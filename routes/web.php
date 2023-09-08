@@ -149,3 +149,11 @@ Route::post('cart-store', [web\CartController::class, 'cart_store'])->name('cart
 
 Route::get('/admin/orders', [web\CartController::class, 'orders'])->name('orders');
 Route::post('/admin/updateStatus', [web\CartController::class, 'updateStatus'])->name('updateStatus');
+
+Route::get('wishlist', [web\CartController::class, 'wishlist'])->name('wishlist');
+Route::get('add-to-wishlist', [web\CartController::class, 'addToWishlist'])->name('add.to.wishlist');
+Route::patch('update-wishlist', [web\CartController::class, 'updateWishlist'])->name('update.wishlist');
+Route::delete('remove-from-wishlist', [web\CartController::class, 'removeWishlist'])->name('remove.from.wishlist');
+
+
+Route::get('thanks', [web\CartController::class, 'thanks'])->name('thanks');

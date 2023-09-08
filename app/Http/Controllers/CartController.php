@@ -23,6 +23,10 @@ class CartController extends Controller
     {
         return view('cart.cart');
     }
+    public function wishlist()
+    {
+        return view('cart.wishlist');
+    }
 
     /**
      * Write code on Method
@@ -64,6 +68,40 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 
+    public function addToWishlist(Request $request){
+        if($request->type == "plant") {
+            $product = Plant::findOrFail($request->id);
+
+        }elseif($request->type == "seed"){
+            $product = Seed::findOrFail($request->id);
+        }
+        elseif($request->type == "soil"){
+            $product = Fertilizer::findOrFail($request->id);
+        }
+        elseif($request->type == "accessory"){
+            $product = Accessory::findOrFail($request->id);
+        }else{
+            $product = Pot::findOrFail($request->id);
+        }
+
+        $cart = session()->get('wishlist', []);
+        if (isset($cart[$request->id])) {
+            $cart[$request->id]['quantity']++;
+        } else {
+            $cart[$request->id] = [
+                "type" => $request->type,
+                "id" => $product->id,
+                "name" => $product->name,
+                "quantity" => 1,
+                "price" => $product->price,
+                "image" => $product->photo,
+            ];
+        }
+
+        session()->put('wishlist', $cart);
+        return redirect()->back()->with('success', 'Product added to wishlist successfully!');
+    }
+
     /**
      * Write code on Method
      *
@@ -79,6 +117,18 @@ class CartController extends Controller
         }
     }
 
+    public function updateWishlist(Request $request)
+    {
+        if ($request->id && $request->quantity) {
+            $cart = session()->get('wishlist');
+            $cart[$request->id]["quantity"] = $request->quantity;
+            session()->put('wishlist', $cart);
+            session()->flash('success', 'wishlist updated successfully');
+        }
+    }
+
+
+
     /**
      * Write code on Method
      *
@@ -91,6 +141,17 @@ class CartController extends Controller
             if (isset($cart[$request->id])) {
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Product removed successfully');
+        }
+    }
+    public function removeWishlist(Request $request)
+    {
+        if ($request->id) {
+            $cart = session()->get('wishlist');
+            if (isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('wishlist', $cart);
             }
             session()->flash('success', 'Product removed successfully');
         }
@@ -131,8 +192,8 @@ class CartController extends Controller
                 Order::create($data);
 
             }
-
-            return redirect()->route('homepage')->with('success', 'You order has been placed');
+            session()->forget('cart');
+            return redirect()->route('thanks')->with('success', 'You order has been placed');
         } else {
             return redirect()->route('check.out')->with('message', 'User is not logged in');
         }
@@ -148,13 +209,15 @@ class CartController extends Controller
     public function updateStatus(Request $request)
     {
 
-        dd($request->all());
-
         $order = Order::find($request->id);
         if ($request->status) {
             $order->status = $request->status;
         }
         $order->save();
         return redirect()->route('orders')->with('message','Status Update');
+    }
+
+    public function thanks(){
+        return view('cart.thanks');
     }
 }

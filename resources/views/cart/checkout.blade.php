@@ -89,7 +89,7 @@
 
                         <div class="group">
                             <label for="phone">Phone Number</label>
-                            <input type="text" name="phone" id="phone">
+                            <input type="number" name="phone" id="phone">
                         </div>
 
                         <div class="group">

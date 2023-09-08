@@ -11,7 +11,7 @@
 @section('content')
     <div class="container">
 
-        <table id="cart" class="table table-hover table-condensed">
+        <table id="wishlist" class="table table-hover table-condensed">
             <thead>
                 <tr>
                     <th style="width:50%">Product</th>
@@ -24,8 +24,8 @@
 
             <tbody>
                 @php $total = 0 @endphp
-                @if (session('cart'))
-                    @foreach (session('cart') as $id => $details)
+                @if (session('wishlist'))
+                    @foreach (session('wishlist') as $id => $details)
                         @php $total += $details['price'] * $details['quantity'] @endphp
                         <tr data-id="{{ $id }}">
                             <td data-th="Product">
@@ -61,33 +61,19 @@
                                     </div>
                                 </div>
                             </td>
-                            <td data-th="Price">${{ $details['price'] }}</td>
+                            <td data-th="Price">{{ $details['price'] }}</td>
                             <td data-th="Quantity">
                                 <input type="number" value="{{ $details['quantity'] }}"
-                                    class="form-control quantity update-cart" />
+                                    class="form-control quantity update-wishlist" />
                             </td>
-                            <td data-th="Subtotal" class="text-center">{{ $details['price'] * $details['quantity'] }}</td>
+                            <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
                             <td class="actions" data-th="">
-                                <button class="btn btn-danger btn-sm remove-from-cart"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-danger btn-sm remove-from-wishlist"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                     @endforeach
                 @endif
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="5" class="text-right">
-                        <h3><strong>Total {{ $total }}</strong></h3>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="5" class="text-right">
-                        <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue
-                            Shopping</a>
-                        <a href="{{ route('check.out')}} " class="btn btn-success">Checkout</a>
-                    </td>
-                </tr>
-            </tfoot>
         </table>
 
         <div>
@@ -104,13 +90,13 @@
     @include('layouts.welcome.footer')
     @push('frontJs')
         <script type="text/javascript">
-            $(".update-cart").change(function(e) {
+            $(".update-wishlist").change(function(e) {
                 e.preventDefault();
 
                 var ele = $(this);
 
                 $.ajax({
-                    url: '{{ route('update.cart') }}',
+                    url: '{{ route('update.wishlist') }}',
                     method: "patch",
                     data: {
                         _token: '{{ csrf_token() }}',
@@ -123,14 +109,14 @@
                 });
             });
 
-            $(".remove-from-cart").click(function(e) {
+            $(".remove-from-wishlist").click(function(e) {
                 e.preventDefault();
 
                 var ele = $(this);
 
                 if (confirm("Are you sure want to remove?")) {
                     $.ajax({
-                        url: '{{ route('remove.from.cart') }}',
+                        url: '{{ route('remove.from.wishlist') }}',
                         method: "DELETE",
                         data: {
                             _token: '{{ csrf_token() }}',

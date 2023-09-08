@@ -31,7 +31,7 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="{{ route('plants.create') }}" class="btn btn-success">Orders </a>
+                                       <h3>All The Orders</h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">

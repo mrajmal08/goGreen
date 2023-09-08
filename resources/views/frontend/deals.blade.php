@@ -51,8 +51,13 @@
                     <div class="box" data-name="b-calathea">
                         <span class="discount"><?php echo  intval($plant->discount_price/$plant->price *100) ?>%</span>
                         <div class="icons">
-                            <a href="#" class="fas fa-heart"></a>
-
+                            <form method="GET" action="{{ route('add.to.wishlist') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="plant" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="fas fa-heart"
+                                onclick="event.preventDefault(); this.closest('form').submit();"></a>
+                            </form>
                         </div>
                         <a class="underline" href="{{ route('plant.detail', [$plant->id]) }}">
                             <img src="{{ asset('assets/plantsFiles') . '/' . $plant->photo }}" alt="">
