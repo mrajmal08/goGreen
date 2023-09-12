@@ -58,8 +58,8 @@
                                                     <th>Name</th>
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
-                                                    <th>Type</th>
-                                                    <th>Category</th>
+                                                    {{-- <th>Type</th> --}}
+                                                    {{-- <th>Category</th> --}}
                                                     <th>Photo</th>
                                                     <th>Action</th>
 
@@ -71,8 +71,8 @@
                                                         <td>{{ $item->name }}</td>
                                                         <td>{{ $item->price }}</td>
                                                         <td>{{ $item->discount_price }}</td>
-                                                        <td>{{ DB::table('plants_by_season_types')->where('id',$item->type_id)->pluck('name')->first() }}</td>
-                                                        <td>{{ DB::table('plants_by_season_types')->where('id',$item->type_id)->pluck('location')->first() }}</td>
+                                                        {{-- <td>{{ DB::table('plants_by_season_types')->where('id',$item->type_id)->pluck('name')->first() }}</td>
+                                                        <td>{{ DB::table('plants_by_season_types')->where('id',$item->type_id)->pluck('location')->first() }}</td> --}}
 
                                                         <td>
                                                             <div class="">
@@ -105,8 +105,8 @@
                                                     <th>Name</th>
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
-                                                    <th>Type</th>
-                                                    <th>Category</th>
+                                                    {{-- <th>Type</th>
+                                                    <th>Category</th> --}}
                                                     <th>Photo</th>
                                                     <th>Action</th>
 

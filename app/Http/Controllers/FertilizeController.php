@@ -56,7 +56,7 @@ class FertilizeController extends Controller
      {
          $validator = Validator::make($request->all(), [
              'name' => 'required|max:255',
-             'type_id' => 'required',
+            //  'type_id' => 'required',
          ]);
 
          if($validator->fails()) {
@@ -71,7 +71,7 @@ class FertilizeController extends Controller
          }
 
          $data['name'] = $request->name;
-         $data['type_id'] = $request->type_id;
+         $data['type_id'] = $request->type_id?$request->type_id:NULL;
          $data['price'] = $request->price;
          $data['discount_price'] = $request->discount_price;
          $data['description'] = $request->description;
@@ -158,7 +158,7 @@ class FertilizeController extends Controller
              $fertilizers->location = $request->location;
          }
          if ($request->type_id) {
-             $fertilizers->type_id = $request->type_id;
+             $fertilizers->type_id = $request->type_id?$request->type_id:NULL;
          }
 
          $fertilizers->save();
@@ -178,7 +178,7 @@ class FertilizeController extends Controller
          $fertilizers = Fertilizer::find($id);
 
          if (!$fertilizers) {
-             return redirect()->route('news.index')->with('error','Id not found');
+             return redirect()->route('fertilizer.index')->with('error','Id not found');
          }
 
          try {

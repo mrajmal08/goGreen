@@ -21,7 +21,7 @@ class CreateFloweringPlantsTable extends Migration
             $table->string('price')->nullable();
             $table->string('discount_price')->nullable();
             $table->string('photo')->nullable();
-            $table->unsignedBigInteger('type_id');
+            $table->unsignedBigInteger('type_id')->nullable();
             $table->timestamps();
         });
     }

@@ -136,28 +136,42 @@ class WellcomeController extends Controller
         return view('frontend.seeds_detail', compact('seed'));
     }
 
-    public function flower_seeds()
+    public function flower_seeds(Request $request)
     {
+        if ($request->id) {
+            $seeds = DB::table('seeds')->where('cat_id', $request->id)->get();
+        } else {
+            $seeds = DB::table('seeds')->whereIn('cat_id', [1, 4, 5, 6])->get();
+        }
 
-        $seeds = DB::table('seeds')->whereIn('cat_id', [1, 4, 5, 6])->get();
         $types = DB::table('seeds_types')->get();
         $categories = DB::table('seeds_categories')->get();
 
         return view('frontend.flower_seeds', compact('types', 'categories', 'seeds'));
     }
 
-    public function fruit_seeds()
+    public function fruit_seeds(Request $request)
     {
-        $seeds = DB::table('seeds')->whereIn('cat_id', [3, 10, 11, 12])->get();
+        if ($request->id) {
+            $seeds = DB::table('seeds')->where('cat_id', $request->id)->get();
+        } else {
+            $seeds = DB::table('seeds')->whereIn('cat_id', [3, 10, 11, 12])->get();
+        }
+
         $types = DB::table('seeds_types')->get();
         $categories = DB::table('seeds_categories')->get();
 
         return view('frontend.fruit_seeds', compact('types', 'categories', 'seeds'));
     }
 
-    public function vegetable_seeds()
+    public function vegetable_seeds(Request $request)
     {
-        $seeds = DB::table('seeds')->whereIn('cat_id', [2, 7, 8, 9])->get();
+        if ($request->id) {
+            $seeds = DB::table('seeds')->where('cat_id', $request->id)->get();
+        } else {
+            $seeds = DB::table('seeds')->whereIn('cat_id', [2, 7, 8, 9])->get();
+        }
+
         $types = DB::table('seeds_types')->get();
         $categories = DB::table('seeds_categories')->get();
 

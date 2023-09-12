@@ -58,7 +58,7 @@ class PotController extends Controller
      {
          $validator = Validator::make($request->all(), [
              'name' => 'required|max:255',
-             'type_id' => 'required',
+            //  'type_id' => 'required',
              'page_id' => 'required',
          ]);
 
@@ -74,7 +74,7 @@ class PotController extends Controller
          }
 
          $data['name'] = $request->name;
-         $data['type_id'] = $request->type_id;
+         $data['type_id'] = $request->type_id? $request->type_id:NULL;
          $data['page_id'] = $request->page_id;
          $data['price'] = $request->price;
          $data['discount_price'] = $request->discount_price;
@@ -163,7 +163,7 @@ class PotController extends Controller
              $pots->location = $request->location;
          }
          if ($request->type_id) {
-             $pots->type_id = $request->type_id;
+             $pots->type_id = $request->type_id? $request->type_id:NULL;
          }
 
          if ($request->page_id) {
@@ -187,7 +187,7 @@ class PotController extends Controller
          $pots = Pot::find($id);
 
          if (!$pots) {
-             return redirect()->route('news.index')->with('error','Id not found');
+             return redirect()->route('pots.index')->with('error','Id not found');
          }
 
          try {

@@ -57,19 +57,11 @@
             <h1>Vegetable Seeds</h1>
             <ol>
                 <ul>
-                    <?php $indoor = DB::table('seeds_types')
-                        ->where('location', 'Vegetable Seeds')
-                        ->get(); ?>
-                    @foreach ($indoor as $type)
-                        <form method="GET" action="{{ route('seeds') }}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $type->id }}" />
-                            <li>
-                                <a href="#" class="link-as-button"
-                                    onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                            </li>
-                        </form>
-                    @endforeach
+                    @foreach ($seeds as $type)
+                    <li>
+                        <a href="{{ route('seeds.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
+                    </li>
+                 @endforeach
                 </ul>
             </ol>
         </div>

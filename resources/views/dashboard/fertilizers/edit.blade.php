@@ -62,7 +62,7 @@
                                     </div>
 
                                     <div class="card-body">
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>Fertilizer Type</label>
                                             <select class="form-control" name="type_id" style="width: 100%;">
                                                 <option {{ $plant->type_id? 'selected':'' }} value="{{ $plant->type_id }}" >{{ DB::table('fertilizer_types')->where('id',$plant->type_id)->pluck('name')->first()}}</option>
@@ -70,7 +70,7 @@
                                                 <option value="{{ $type->id}} ">{{ $type->name}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group">
                                             <label for="inputName">Fertilizer Name</label>

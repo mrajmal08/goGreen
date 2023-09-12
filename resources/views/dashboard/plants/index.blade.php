@@ -58,7 +58,7 @@
                                                     <th>Name</th>
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
-                                                    <th>Type</th>
+                                                    {{-- <th>Type</th> --}}
                                                     <th>Category</th>
                                                     <th>Photo</th>
                                                     <th>Action</th>
@@ -71,7 +71,7 @@
                                                         <td>{{ $item->name }}</td>
                                                         <td>{{ $item->price }}</td>
                                                         <td>{{ $item->discount_price }}</td>
-                                                        <td>{{ DB::table('plants_types')->where('id',$item->type_id)->pluck('name')->first() }}</td>
+                                                        {{-- <td>{{ DB::table('plants_types')->where('id',$item->type_id)->pluck('name')->first() }}</td> --}}
                                                         <td>{{ DB::table('plants_categories')->where('id',$item->cat_id)->pluck('name')->first() }}</td>
 
                                                         <td>
@@ -105,7 +105,7 @@
                                                     <th>Name</th>
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
-                                                    <th>Type</th>
+                                                    {{-- <th>Type</th> --}}
                                                     <th>Category</th>
                                                     <th>Photo</th>
                                                     <th>Action</th>

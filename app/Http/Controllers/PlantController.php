@@ -57,7 +57,6 @@ class PlantController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
-            'type_id' => 'required',
             'cat_id' => 'required',
         ]);
 
@@ -73,8 +72,10 @@ class PlantController extends Controller
         }
 
         $data['name'] = $request->name;
-        $data['type_id'] = $request->type_id;
+        // $data['type_id'] = $request->type_id;
+        $data['type_id'] = NULL;
         $data['cat_id'] = $request->cat_id;
+        $data['price'] = $request->price;
         $data['price'] = $request->price;
         $data['discount_price'] = $request->discount_price;
         $data['description'] = $request->description;
@@ -162,7 +163,7 @@ class PlantController extends Controller
             $plants->location = $request->location;
         }
         if ($request->type_id) {
-            $plants->type_id = $request->type_id;
+            $plants->type_id = $request->type_id ? $request->type_id: NULL;
         }
 
         if ($request->cat_id) {
@@ -186,13 +187,13 @@ class PlantController extends Controller
         $plants = Plant::find($id);
 
         if (!$plants) {
-            return redirect()->route('news.index')->with('error','Id not found');
+            return redirect()->route('fertilizer.index')->with('error','Id not found');
         }
 
         try {
             unlink('assets/plantsFiles' . '/' . $plants->photo);
             $plants->delete();
-            return redirect()->route('plants.index')->with('message', 'plants deleted Successfully');
+            return redirect()->route('c.index')->with('message', 'plants deleted Successfully');
 
         } catch (\Exception $e) {
 

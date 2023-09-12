@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="card-body">
 
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>Plant Type</label>
                                             <select class="form-control" name="type_id" style="width: 100%;">
                                                 <option value="">--select type --</option>
@@ -69,7 +69,7 @@
                                                 <option value="{{ $type->id}} ">{{ $type->name}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group">
                                             <label for="inputName">Plant Name</label>

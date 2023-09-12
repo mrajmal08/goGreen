@@ -22,7 +22,7 @@ class CreatePotsTable extends Migration
             $table->string('discount_price')->nullable();
             $table->string('photo')->nullable();
             $table->unsignedBigInteger('page_id');
-            $table->unsignedBigInteger('type_id');
+            $table->unsignedBigInteger('type_id')->nullable();
             $table->timestamps();
         });
     }

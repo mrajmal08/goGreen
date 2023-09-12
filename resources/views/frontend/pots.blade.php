@@ -9,19 +9,11 @@
         <ol>
             <li><a href="#"></a></li>
             <ul>
-                <?php $indoor = DB::table('pots_types')
-                        ->where('page', 'Pots')
-                        ->get(); ?>
-                    @foreach ($indoor as $type)
-                        <form method="GET" action="{{ route('pots') }}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $type->id }}" />
-                            <li>
-                                <a href="#" class="link-as-button"
-                                    onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                            </li>
-                        </form>
-                    @endforeach
+                @foreach ($pots as $type)
+                <li>
+                    <a href="{{ route('pots.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
+                </li>
+             @endforeach
             </ul>
         </ol>
     </div>

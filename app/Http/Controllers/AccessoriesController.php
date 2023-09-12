@@ -56,7 +56,7 @@ class AccessoriesController extends Controller
      {
          $validator = Validator::make($request->all(), [
              'name' => 'required|max:255',
-             'type_id' => 'required',
+            //  'type_id' => 'required',
              'cat_id' => 'required',
          ]);
 
@@ -72,7 +72,7 @@ class AccessoriesController extends Controller
          }
 
          $data['name'] = $request->name;
-         $data['type_id'] = $request->type_id;
+         $data['type_id'] = $request->type_id?$request->type_id:NULL;
          $data['cat_id'] = $request->cat_id;
          $data['price'] = $request->price;
          $data['discount_price'] = $request->discount_price;
@@ -161,7 +161,7 @@ class AccessoriesController extends Controller
              $accessories->location = $request->location;
          }
          if ($request->type_id) {
-             $accessories->type_id = $request->type_id;
+             $accessories->type_id = $request->type_id?$request->type_id:NULL;
          }
 
          if ($request->cat_id) {
@@ -185,7 +185,7 @@ class AccessoriesController extends Controller
          $accessories = Accessory::find($id);
 
          if (!$accessories) {
-             return redirect()->route('news.index')->with('error','Id not found');
+             return redirect()->route('accessories.index')->with('error','Id not found');
          }
 
          try {

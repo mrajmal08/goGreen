@@ -10,17 +10,11 @@
         <h1>Soil and Fertilizer</h1>
         <ol>
             <ul>
-                <?php $indoor = DB::table('fertilizer_types')->get(); ?>
-                @foreach ($indoor as $type)
-                    <form method="GET" action="{{ route('soil.fertilizer') }}">
-                        @csrf
-                        <input type="hidden" name="id" value="{{ $type->id }}" />
-                        <li>
-                            <a href="#" class="link-as-button"
-                                onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                        </li>
-                    </form>
-                @endforeach
+                @foreach ($plants as $type)
+                <li>
+                    <a href="{{ route('plant.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
+                </li>
+             @endforeach
             </ul>
         </ol>
     </div>

@@ -58,21 +58,13 @@
             <ol>
                 <li><a href="#">1-Flowering Seeds</a></li>
                 <ul>
-                    <?php $indoor = DB::table('seeds_types')
-                        ->where('location', 'Flowering Seeds')
-                        ->get(); ?>
-                    @foreach ($indoor as $type)
-                        <form method="GET" action="{{ route('seeds') }}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $type->id }}" />
-                            <li>
-                                <a href="#" class="link-as-button"
-                                    onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                            </li>
-                        </form>
-                    @endforeach
+                    @foreach ($seeds as $type)
+                    <li>
+                        <a href="{{ route('seeds.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
+                    </li>
+                @endforeach
                 </ul>
-                <li><a href="#">2-Vegetable Seeds</a></li>
+                {{-- <li><a href="#">2-Vegetable Seeds</a></li>
                 <ul>
                     <?php $indoor = DB::table('seeds_types')
                         ->where('location', 'Vegetable Seeds')
@@ -103,7 +95,7 @@
                             </li>
                         </form>
                     @endforeach
-                </ul>
+                </ul> --}}
             </ol>
         </div>
 

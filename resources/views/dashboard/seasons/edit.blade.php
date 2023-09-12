@@ -62,7 +62,7 @@
                                     </div>
 
                                     <div class="card-body">
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>season Type</label>
                                             <select class="form-control" name="type_id" style="width: 100%;">
                                                 <option {{ $season->type_id? 'selected':'' }} value="{{ $season->type_id }}" >{{ DB::table('plants_by_season_types')->where('id',$season->type_id)->pluck('name')->first()}}</option>
@@ -70,7 +70,7 @@
                                                 <option value="{{ $type->id}} ">{{ $type->name}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group">
                                             <label for="inputName">season Name</label>

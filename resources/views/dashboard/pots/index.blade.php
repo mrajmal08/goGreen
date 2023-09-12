@@ -57,7 +57,7 @@
                                                     <th>Name</th>
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
-                                                    <th>Type</th>
+                                                    {{-- <th>Type</th> --}}
                                                     <th>Photo</th>
                                                     <th>Action</th>
 
@@ -69,7 +69,7 @@
                                                         <td>{{ $item->name }}</td>
                                                         <td>{{ $item->price }}</td>
                                                         <td>{{ $item->discount_price }}</td>
-                                                        <td>{{ DB::table('pots_types')->where('id',$item->type_id)->pluck('name')->first() }}</td>
+                                                        {{-- <td>{{ DB::table('pots_types')->where('id',$item->type_id)->pluck('name')->first() }}</td> --}}
                                                         <td>
                                                             <div class="">
                                                                 <a href="{{ asset('assets/potsFiles') . '/' . $item->photo }}?text=1"
@@ -101,7 +101,7 @@
                                                     <th>Name</th>
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
-                                                    <th>Type</th>
+                                                    {{-- <th>Type</th> --}}
                                                     <th>Photo</th>
                                                     <th>Action</th>
 

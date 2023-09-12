@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body">
-
+{{--
                                         <div class="form-group">
                                             <label>Fertilizer Type</label>
                                             <select class="form-control" name="type_id" style="width: 100%;">
@@ -69,7 +69,7 @@
                                                 <option value="{{ $type->id}} ">{{ $type->name}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group">
                                             <label for="inputName">Fertilizer Name</label>

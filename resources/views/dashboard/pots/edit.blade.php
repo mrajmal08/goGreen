@@ -69,7 +69,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>Pot Type</label>
                                             <select class="form-control" name="type_id" style="width: 100%;">
                                                 <option {{ $pot->type_id? 'selected':'' }} value="{{ $pot->type_id }}" >{{ DB::table('pots_types')->where('id',$pot->type_id)->pluck('name')->first()}}</option>
@@ -77,7 +77,7 @@
                                                 <option value="{{ $type->id}} ">{{ $type->name}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group">
                                             <label for="inputName">Pot Name</label>

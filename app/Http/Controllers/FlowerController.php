@@ -55,7 +55,7 @@ class FlowerController extends Controller
      {
          $validator = Validator::make($request->all(), [
              'name' => 'required|max:255',
-             'type_id' => 'required',
+            //  'type_id' => 'required',
          ]);
 
          if($validator->fails()) {
@@ -70,7 +70,7 @@ class FlowerController extends Controller
          }
 
          $data['name'] = $request->name;
-         $data['type_id'] = $request->type_id;
+         $data['type_id'] = $request->type_id? $request->type_id: NULL;
          $data['price'] = $request->price;
          $data['discount_price'] = $request->discount_price;
          $data['description'] = $request->description;
@@ -157,7 +157,7 @@ class FlowerController extends Controller
              $flowers->location = $request->location;
          }
          if ($request->type_id) {
-             $flowers->type_id = $request->type_id;
+             $flowers->type_id = $request->type_id? $request->type_id: NULL;
          }
 
          $flowers->save();
@@ -177,7 +177,7 @@ class FlowerController extends Controller
          $flowers = Flower::find($id);
 
          if (!$flowers) {
-             return redirect()->route('news.index')->with('error','Id not found');
+             return redirect()->route('flower.index')->with('error','Id not found');
          }
 
          try {

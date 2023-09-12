@@ -57,7 +57,7 @@ class SeedsController extends Controller
      {
          $validator = Validator::make($request->all(), [
              'name' => 'required|max:255',
-             'type_id' => 'required',
+            //  'type_id' => 'required',
              'cat_id' => 'required',
          ]);
 
@@ -73,7 +73,7 @@ class SeedsController extends Controller
          }
 
          $data['name'] = $request->name;
-         $data['type_id'] = $request->type_id;
+         $data['type_id'] = $request->type_id?$request->type_id: NULL;
          $data['cat_id'] = $request->cat_id;
          $data['price'] = $request->price;
          $data['discount_price'] = $request->discount_price;
@@ -162,7 +162,7 @@ class SeedsController extends Controller
              $seeds->location = $request->location;
          }
          if ($request->type_id) {
-             $seeds->type_id = $request->type_id;
+             $seeds->type_id = $request->type_id?$request->type_id: NULL;
          }
 
          if ($request->cat_id) {
@@ -186,7 +186,7 @@ class SeedsController extends Controller
          $seeds = Seed::find($id);
 
          if (!$seeds) {
-             return redirect()->route('news.index')->with('error','Id not found');
+             return redirect()->route('seeds.index')->with('error','Id not found');
          }
 
          try {

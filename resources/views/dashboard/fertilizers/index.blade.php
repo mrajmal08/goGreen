@@ -28,12 +28,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Siol and Fertilizer</h1>
+                                <h1>Soil and Fertilizer</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="{{ route('season.index') }}">Home</a></li>
-                                    <li class="breadcrumb-item active">Siol and Fertilizer</li>
+                                    <li class="breadcrumb-item active">Soil and Fertilizer</li>
                                 </ol>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                                                     <th>Name</th>
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
-                                                    <th>Type</th>
+                                                    {{-- <th>Type</th> --}}
                                                     <th>Photo</th>
                                                     <th>Action</th>
 
@@ -70,7 +70,7 @@
                                                         <td>{{ $item->name }}</td>
                                                         <td>{{ $item->price }}</td>
                                                         <td>{{ $item->discount_price }}</td>
-                                                        <td>{{ DB::table('fertilizer_types')->where('id',$item->type_id)->pluck('name')->first() }}</td>
+                                                        {{-- <td>{{ DB::table('fertilizer_types')->where('id',$item->type_id)->pluck('name')->first() }}</td> --}}
 
                                                         <td>
                                                             <div class="">
@@ -103,7 +103,7 @@
                                                     <th>Name</th>
                                                     <th>Price</th>
                                                     <th>Discounted Price</th>
-                                                    <th>Type</th>
+                                                    {{-- <th>Type</th> --}}
                                                     <th>Photo</th>
                                                     <th>Action</th>
 

@@ -70,7 +70,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>Accessory Type</label>
                                             <select class="form-control" name="type_id" style="width: 100%;">
                                                 <option {{ $accessories->type_id? 'selected':'' }} value="{{ $accessories->type_id }}" >{{ DB::table('accessories_types')->where('id',$accessories->type_id)->pluck('name')->first()}}</option>
@@ -78,7 +78,7 @@
                                                 <option value="{{ $type->id}} ">{{ $type->name}}</option>
                                                 @endforeach
                                             </select>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group">
                                             <label for="inputName">Accessory Name</label>

@@ -24,21 +24,13 @@
             <ol>
                 <li><a href="#">Summer Plants</a></li>
                 <ul>
-                    <?php $indoor = DB::table('plants_by_season_types')
-                        ->where('location', 'Summer Plants')
-                        ->get(); ?>
-                    @foreach ($indoor as $type)
-                        <form method="GET" action="{{ route('plant.by.season') }}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $type->id }}" />
-                            <li>
-                                <a href="#" class="link-as-button"
-                                    onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                            </li>
-                        </form>
-                    @endforeach
+                    @foreach ($plants as $type)
+                    <li>
+                        <a href="{{ route('plant.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
+                    </li>
+                @endforeach
                 </ul>
-                <li><a href="#">Winter Plants</a></li>
+                {{-- <li><a href="#">Winter Plants</a></li>
                 <ul>
                     <?php $indoor = DB::table('plants_by_season_types')
                     ->where('location', 'Winter Plants')
@@ -69,7 +61,7 @@
                         </li>
                     </form>
                 @endforeach
-                </ul>
+                </ul> --}}
             </ol>
         </div>
 
