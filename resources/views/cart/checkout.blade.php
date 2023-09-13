@@ -73,10 +73,9 @@
                 @if (session('message'))
                     <div class="alert alert-danger">
                         {{ session('message') }}
+                        Please create your account <a href="{{ route('login') }}">sign up</a>
                     </div>
                 @endif
-
-
 
                 <h1>Checkout</h1>
                 <form method="POST" action="{{ route('cart.store') }}">

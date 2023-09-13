@@ -30,45 +30,47 @@
                         <tr data-id="{{ $id }}">
                             <td data-th="Product">
                                 <div class="row">
-                                    @if($details['type'] == "plant")
-                                    <div class="col-sm-3 hidden-xs"><img
-                                            src="{{ asset('assets/plantsFiles') . '/' . $details['image'] }}" width="100"
-                                            height="100" class="img-responsive" />
-                                    </div>
-                                    @elseif($details['type'] == "seed")
-                                    <div class="col-sm-3 hidden-xs"><img
-                                        src="{{ asset('assets/seedsFiles') . '/' . $details['image'] }}" width="100"
-                                        height="100" class="img-responsive" />
-                                </div>
-                                @elseif($details['type'] == "soil")
-                                    <div class="col-sm-3 hidden-xs"><img
-                                        src="{{ asset('assets/fertilizersFiles') . '/' . $details['image'] }}" width="100"
-                                        height="100" class="img-responsive" />
-                                </div>
-                                @elseif($details['type'] == "accessory")
-                                <div class="col-sm-3 hidden-xs"><img
-                                    src="{{ asset('assets/accessoriesFiles') . '/' . $details['image'] }}" width="100"
-                                    height="100" class="img-responsive" />
-                            </div>
-                            @elseif($details['type'] == "pot")
-                            <div class="col-sm-3 hidden-xs"><img
-                                src="{{ asset('assets/potsFiles') . '/' . $details['image'] }}" width="100"
-                                height="100" class="img-responsive" />
-                        </div>
-                                @endif
+                                    @if ($details['type'] == 'plant')
+                                        <div class="col-sm-3 hidden-xs"><img
+                                                src="{{ asset('assets/plantsFiles') . '/' . $details['image'] }}"
+                                                width="100" height="100" class="img-responsive" />
+                                        </div>
+                                    @elseif($details['type'] == 'seed')
+                                        <div class="col-sm-3 hidden-xs"><img
+                                                src="{{ asset('assets/seedsFiles') . '/' . $details['image'] }}"
+                                                width="100" height="100" class="img-responsive" />
+                                        </div>
+                                    @elseif($details['type'] == 'soil')
+                                        <div class="col-sm-3 hidden-xs"><img
+                                                src="{{ asset('assets/fertilizersFiles') . '/' . $details['image'] }}"
+                                                width="100" height="100" class="img-responsive" />
+                                        </div>
+                                    @elseif($details['type'] == 'accessory')
+                                        <div class="col-sm-3 hidden-xs"><img
+                                                src="{{ asset('assets/accessoriesFiles') . '/' . $details['image'] }}"
+                                                width="100" height="100" class="img-responsive" />
+                                        </div>
+                                    @elseif($details['type'] == 'pot')
+                                        <div class="col-sm-3 hidden-xs"><img
+                                                src="{{ asset('assets/potsFiles') . '/' . $details['image'] }}"
+                                                width="100" height="100" class="img-responsive" />
+                                        </div>
+                                    @endif
                                     <div class="col-sm-9">
                                         <h4 class="nomargin">{{ $details['name'] }}</h4>
                                     </div>
                                 </div>
                             </td>
-                            <td data-th="Price">{{ $details['price'] }}</td>
+                            <td data-th="Price">Rs. {{ $details['price'] }}</td>
                             <td data-th="Quantity">
                                 <input type="number" value="{{ $details['quantity'] }}"
                                     class="form-control quantity update-wishlist" />
                             </td>
-                            <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
+                            <td data-th="Subtotal" class="text-center">Rs. {{ $details['price'] * $details['quantity'] }}
+                            </td>
                             <td class="actions" data-th="">
-                                <button class="btn btn-danger btn-sm remove-from-wishlist"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-danger btn-sm remove-from-wishlist"><i
+                                        class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                     @endforeach
@@ -134,4 +136,3 @@
         <script src="{{ asset('js/script.js') }}" defer></script>
     @endpush
 @endsection
-

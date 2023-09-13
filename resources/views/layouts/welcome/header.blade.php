@@ -8,26 +8,29 @@
             <form action="" class="search-bar-container">
                 <input type="search" id="search-bar" placeholder="search here...">
                 <label for="search-bar" class="fas fa-search"></label>
+
             </form>
             <div class="icons">
                 <ul class="social-network d-flex align-items-center p-0">
-                    <a href="{{ route('cart') }}" style="text-decoration: none;"><i class="fas fa-shopping-cart"></i><span
+                    <a href="{{ route('cart') }}" style="text-decoration: none;"><i
+                            class="fas fa-shopping-cart"></i><span
                             style="    font-size: 15px;
                         position: relative;
                         bottom: 19px;">{{ count((array) session('cart')) }}</span></a>
 
                     <a href="{{ route('wishlist') }}" style="text-decoration: none;"><i class="fas fa-heart"></i><span
-                        style="    font-size: 15px;
+                            style="    font-size: 15px;
                     position: relative;
                     bottom: 19px;
                     text-decoration: none;">{{ count((array) session('wishlist')) }}</span></a>
 
                     {{-- <a href="#"><i class="fas fa-heart"></i></a> --}}
-                    @if(auth()->check())
-                    <form action="/logout" method="post">
-                        @csrf
-                    <a href="" onclick="event.preventDefault(); this.closest('form').submit();"><i class="fas fa-sign-out-alt"></i></a>
-                    </form>
+                    @if (auth()->check())
+                        <form action="/logout" method="post">
+                            @csrf
+                            <a href="" onclick="event.preventDefault(); this.closest('form').submit();"><i
+                                    class="fas fa-sign-out-alt"></i></a>
+                        </form>
                     @else
                         <a href="{{ route('login') }}"><i class="fas fa-user-circle"></i></a>
                     @endif
@@ -35,8 +38,31 @@
                 </ul>
             </div>
         </div>
+           <div class="div-list"
+           style="position: absolute;
+       top: 69px;
+       left: 0;
+       right: 0;
+       width: 200px; /* Adjust the width as needed */
+       margin: 0 auto;
+       text-align: center;
+       z-index: 1;">
+            <div class="div-item">
+                <h2>Item 1</h2>
+                <p>Description of item 1 goes here.</p>
+            </div>
+            <div class="div-item">
+                <h2>Item 2</h2>
+                <p>Description of item 2 goes here.</p>
+            </div>
+            <div class="div-item">
+                <h2>Item 3</h2>
+                <p>Description of item 3 goes here.</p>
+            </div>
+            <!-- Add more div items as needed -->
+        </div>
         <!--nevegation  menu start-->
-        <div class="header-3">
+        <div class="header-3" style=" display: block;">
             <div id="menu-bar" class="fas fa-bars"></div>
             <nav class="nav-menu">
                 <ul class="menu">
