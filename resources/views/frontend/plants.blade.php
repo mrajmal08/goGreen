@@ -96,7 +96,8 @@
                 <ul>
                     @foreach ($plants as $type)
                         <li>
-                            <a href="{{ route('plant.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
+                            <a href="{{ route('plant.detail', [$type->id]) }}"
+                                class="link-as-button">{{ $type->name }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -106,7 +107,7 @@
                     // $indoor = DB::table('plants_types')
                     //     ->where('location', 'Outdoor Plants')
                     //     ->get();
-                        ?>
+                    ?>
                     @foreach ($indoor as $type)
                         <form method="GET" action="{{ route('plants') }}">
                             @csrf
@@ -124,7 +125,7 @@
                         // $indoor = DB::table('plants_types')
                         //     ->where('location', 'Office Plants')
                         //     ->get();
-                             ?>
+                        ?>
                         @foreach ($indoor as $type)
                             <form method="GET" action="{{ route('plants') }}">
                                 @csrf
@@ -140,39 +141,79 @@
         </div>
 
         <!-- product section starts  -->
-
-        <section class="product" id="product">
-            <h1 class="heading">Products of Plants</h1>
-            <div class="box-container">
-                @foreach ($plants as $plant)
-                    <div class="box" data-name="b-calathea">
-                        <div class="icons">
-                            <form method="GET" action="{{ route('add.to.wishlist') }}">
+        @if ($plants->count() == 1)
+            @foreach ($plants as $plant)
+                <section class="product" id="product"
+                    style="    position: relative;
+                top: 250px;
+            ">
+                    <h1 class="heading" style="margin: 0px;">Products of Plants</h1>
+                    <div class="box-container" style="width: 50% !important">
+                        <div class="box" data-name="b-calathea">
+                            <div class="icons">
+                                <form method="GET" action="{{ route('add.to.wishlist') }}">
+                                    @csrf
+                                    <input type="hidden" name="type" value="plant" />
+                                    <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                    <a href="#" class="fas fa-heart"
+                                        onclick="event.preventDefault(); this.closest('form').submit();"></a>
+                                </form>
+                            </div>
+                            <a class="underline" href="{{ route('plant.detail', [$plant->id]) }}">
+                                <img src="{{ asset('assets/plantsFiles') . '/' . $plant->photo }}" alt="">
+                                <h3>{{ $plant->name }}</h3>
+                            </a>
+                            <div class="location"> Location:
+                                <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
+                            </div>
+                            <div class="price">Rs.{{ $plant->price }}</div>
+                            <form method="GET" action="{{ route('add.to.cart') }}">
                                 @csrf
                                 <input type="hidden" name="type" value="plant" />
                                 <input type="hidden" name="id" value="{{ $plant->id }}" />
-                                <a href="#" class="fas fa-heart"
-                                onclick="event.preventDefault(); this.closest('form').submit();"></a>
+                                <a href="#" class="btn"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
                             </form>
                         </div>
-                        <a class="underline" href="{{ route('plant.detail', [$plant->id])}}">
-                        <img src="{{ asset('assets/plantsFiles') . '/' . $plant->photo }}" alt="">
-                        <h3>{{ $plant->name }}</h3></a>
-                        <div class="location"> Location:
-                            <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
-                        </div>
-                        <div class="price">Rs.{{ $plant->price }}</div>
-                        <form method="GET" action="{{ route('add.to.cart') }}">
-                            @csrf
-                            <input type="hidden" name="type" value="plant" />
-                            <input type="hidden" name="id" value="{{ $plant->id }}" />
-                            <a href="#" class="btn"
-                            onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
-                        </form>
                     </div>
-                @endforeach
-            </div>
-        </section>
+                </section>
+            @endforeach
+        @else
+            <section class="product" id="product">
+                <h1 class="heading">Products of Plants</h1>
+                <div class="box-container">
+                    @foreach ($plants as $plant)
+                        <div class="box" data-name="b-calathea">
+                            <div class="icons">
+                                <form method="GET" action="{{ route('add.to.wishlist') }}">
+                                    @csrf
+                                    <input type="hidden" name="type" value="plant" />
+                                    <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                    <a href="#" class="fas fa-heart"
+                                        onclick="event.preventDefault(); this.closest('form').submit();"></a>
+                                </form>
+                            </div>
+                            <a class="underline" href="{{ route('plant.detail', [$plant->id]) }}">
+                                <img src="{{ asset('assets/plantsFiles') . '/' . $plant->photo }}" alt="">
+                                <h3>{{ $plant->name }}</h3>
+                            </a>
+                            <div class="location"> Location:
+                                <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
+                            </div>
+                            <div class="price">Rs.{{ $plant->price }}</div>
+                            <form method="GET" action="{{ route('add.to.cart') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="plant" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="btn"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+                            </form>
+                        </div>
+                    @endforeach
+                </div>
+            </section>
+        @endif
+
 
         @include('layouts.welcome.footer')
         @push('frontJs')

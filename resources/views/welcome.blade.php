@@ -192,7 +192,16 @@
         </div>
     </section>
     <!-- slider section starts-->
-
+    @if ($errors->any())
+    @foreach ($errors->all() as $error)
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert"
+                aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-exclamation-triangle"></i> Alert!</h5>
+            {{ $error }}
+        </div>
+    @endforeach
+@endif
 
     <!-- deal section starts  -->
     <section class="deal" id="deal">

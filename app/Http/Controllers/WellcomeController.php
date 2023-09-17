@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Plant;
+use Illuminate\Support\Facades\Redirect;
+
+
 
 class WellcomeController extends Controller
 {
@@ -319,6 +323,42 @@ class WellcomeController extends Controller
     {
         $plants = DB::table('plants')->whereNotNull('discount_price')->get();
         return view('frontend.deals', compact('plants'));
+    }
+
+    public function filter(Request $request){
+
+        $plants = Plant::where('name', 'LIKE', '%' . $request->search . '%')->get();
+        if (!$plants->isEmpty()) {
+            return view('frontend.plants', compact('plants'));
+        }
+        $plants = DB::table('plants_by_season')->where('name', 'LIKE', '%' . $request->search . '%')->get();
+        if (!$plants->isEmpty()) {
+            return view('frontend.plants', compact('plants'));
+        }
+        $plants = DB::table('flowering_plants')->where('name', 'LIKE', '%' . $request->search . '%')->get();
+        if (!$plants->isEmpty()) {
+            return view('frontend.plants', compact('plants'));
+        }
+        $seeds = DB::table('seeds')->where('name', 'LIKE', '%' . $request->search . '%')->get();
+        if (!$seeds->isEmpty()) {
+            return view('frontend.seeds', compact('seeds'));
+        }
+        $plants = DB::table('fertilizer')->where('name', 'LIKE', '%' . $request->search . '%')->get();
+        if (!$plants->isEmpty()) {
+            return view('frontend.soil_fertilizer', compact('plants'));
+        }
+        $accessories = DB::table('accessories')->where('name', 'LIKE', '%' . $request->search . '%')->get();
+        if (!$accessories->isEmpty()) {
+            return view('frontend.accessories', compact('accessories'));
+        }
+
+        $pots = DB::table('pots')->where('name', 'LIKE', '%' . $request->search . '%')->get();
+        if (!$pots->isEmpty()) {
+            return view('frontend.pots', compact('pots'));
+        }
+        return Redirect::route('homepage')->withErrors(['msg' => 'No Record found..']);
+
+
     }
 
 }

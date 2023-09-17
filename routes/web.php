@@ -157,3 +157,4 @@ Route::delete('remove-from-wishlist', [web\CartController::class, 'removeWishlis
 
 
 Route::get('thanks', [web\CartController::class, 'thanks'])->name('thanks');
+Route::get('filter', [web\WellcomeController::class, 'filter'])->name('filter');

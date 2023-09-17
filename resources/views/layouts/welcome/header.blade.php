@@ -5,10 +5,12 @@
                 <a href="/" class="logo"><i class="fas fa-seedling"></i></a>
                 <h5>GoGreenNursery</h5>
             </ul>
-            <form action="" class="search-bar-container">
-                <input type="search" id="search-bar" placeholder="search here...">
-                <label for="search-bar" class="fas fa-search"></label>
-
+            <form method="GET" action="{{ route('filter') }}" class="search-bar-container">
+                @csrf
+                <input type="search" name="search" id="search-bar" placeholder="search here...">
+                {{-- <label for="search-bar" class="fas fa-search"></label> --}}
+                <a href="#" onclick="event.preventDefault(); this.closest('form').submit();"> <label
+                        for="search-bar" class="fas fa-search"></label></a>
             </form>
             <div class="icons">
                 <ul class="social-network d-flex align-items-center p-0">
@@ -38,29 +40,14 @@
                 </ul>
             </div>
         </div>
-           <div class="div-list"
-           style="position: absolute;
-       top: 69px;
-       left: 0;
-       right: 0;
-       width: 200px; /* Adjust the width as needed */
-       margin: 0 auto;
-       text-align: center;
-       z-index: 1;">
-            <div class="div-item">
-                <h2>Item 1</h2>
-                <p>Description of item 1 goes here.</p>
+        @if ($errors->any())
+            <div style="    text-align: center;
+        position: relative;
+        top: -26px;
+    }">
+                <h3 style="color: red">{{ $errors->first() }}</h3>
             </div>
-            <div class="div-item">
-                <h2>Item 2</h2>
-                <p>Description of item 2 goes here.</p>
-            </div>
-            <div class="div-item">
-                <h2>Item 3</h2>
-                <p>Description of item 3 goes here.</p>
-            </div>
-            <!-- Add more div items as needed -->
-        </div>
+        @endif
         <!--nevegation  menu start-->
         <div class="header-3" style=" display: block;">
             <div id="menu-bar" class="fas fa-bars"></div>
