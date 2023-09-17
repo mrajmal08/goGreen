@@ -22,7 +22,7 @@
     <!-- product section starts  -->
 
     <section class="product" id="product">
-        <h1 class="heading">Soil and Fertilizer</h1>
+        <h1 class="heading">Soil and Fertilizer (Spray)</h1>
         <div class="box-container">
             @foreach ($plants as $plant)
                 <div class="box" data-name="b-calathea">
