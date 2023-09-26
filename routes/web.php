@@ -21,9 +21,14 @@ Route::get('/', [Web\WellcomeController::class, 'homepage'])->name('homepage');
 Route::get('/types-of-plants', [Web\WellcomeController::class, 'types_of_plants'])->name('types.of.plants');
 
 Route::get('/plants-by-season', [Web\WellcomeController::class, 'plant_by_season'])->name('plant.by.season');
+Route::get('/season-detail/{id}', [Web\WellcomeController::class, 'plant_by_season_detail'])->name('season.detail');
 
 Route::get('/plants-by-location', [Web\WellcomeController::class, 'plant_by_location'])->name('plant.by.location');
+
 Route::get('/flowering-plants', [Web\WellcomeController::class, 'flowering_plants'])->name('flowering.plants');
+Route::get('/flower-detail/{id}', [Web\WellcomeController::class, 'flowering_plants_detail'])->name('flower.detail');
+
+
 Route::get('/flower-seeds', [Web\WellcomeController::class, 'flower_seeds'])->name('flower.seeds');
 Route::get('/fruit-seeds', [Web\WellcomeController::class, 'fruit_seeds'])->name('fruit.seeds');
 Route::get('/vegetable-seeds', [Web\WellcomeController::class, 'vegetable_seeds'])->name('vegetable.seeds');

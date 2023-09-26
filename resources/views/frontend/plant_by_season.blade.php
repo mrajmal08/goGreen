@@ -24,11 +24,14 @@
             <ol>
                 <li><a href="#">Summer Plants</a></li>
                 <ul>
-                    @foreach ($plants as $type)
-                    <li>
-                        <a href="{{ route('plant.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
-                    </li>
-                @endforeach
+                    <ul>
+                        @foreach ($plants as $type)
+                            <li>
+                                <a href="{{ route('season.detail', [$type->id]) }}" class="button-link">{{ $type->name }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+
                 </ul>
                 {{-- <li><a href="#">Winter Plants</a></li>
                 <ul>
@@ -84,7 +87,7 @@
                             onclick="event.preventDefault(); this.closest('form').submit();"></a>
                         </form>
                     </div>
-                    <a class="underline" href="{{ route('plant.detail', [$plant->id])}}">
+                    <a class="underline" href="{{ route('season.detail', [$plant->id])}}">
                     <img src="{{ asset('assets/seasonsFiles') . '/' . $plant->photo }}" alt="">
                     <h3>{{ $plant->name }}</h3></a>
                     <div class="location"> Location:
@@ -118,7 +121,7 @@
                             onclick="event.preventDefault(); this.closest('form').submit();"></a>
                         </form>
                     </div>
-                    <a class="underline" href="{{ route('plant.detail', [$plant->id])}}">
+                    <a class="underline" href="{{ route('season.detail', [$plant->id])}}">
                     <img src="{{ asset('assets/seasonsFiles') . '/' . $plant->photo }}" alt="">
                     <h3>{{ $plant->name }}</h3></a>
                     <div class="location"> Location:

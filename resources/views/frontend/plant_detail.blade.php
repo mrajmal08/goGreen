@@ -14,7 +14,13 @@
     <div class="box">
         <div class="images">
             <div class="img-holder active">
+                @if($type == 'season')
+                <img src="{{ asset('assets/seasonsFiles') . '/' . $plant->photo }}" height="100%">
+                @elseif($type == 'flower')
+                <img src="{{ asset('assets/flowersFiles') . '/' . $plant->photo }}" height="100%">
+                @else
                 <img src="{{ asset('assets/plantsFiles') . '/' . $plant->photo }}" height="100%">
+                @endif
             </div>
         </div>
         <div class="basic-info">

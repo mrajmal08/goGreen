@@ -43,6 +43,14 @@ class WellcomeController extends Controller
 
         return view('frontend.plant_by_season', compact('types', 'plants'));
     }
+
+    public function plant_by_season_detail($id)
+    {
+        $plant = DB::table('plants_by_season')->where('id', $id)->first();
+        $type = 'season';
+        return view('frontend.plant_detail', compact('plant', 'type'));
+    }
+
     public function plant_by_location(Request $request)
     {
 
@@ -69,6 +77,13 @@ class WellcomeController extends Controller
 
         return view('frontend.flowering_plants', compact('types', 'plants'));
 
+    }
+
+    public function flowering_plants_detail($id)
+    {
+        $plant = DB::table('flowering_plants')->where('id', $id)->first();
+        $type = 'flower';
+        return view('frontend.plant_detail', compact('plant', 'type'));
     }
 
     public function spray(Request $request)
@@ -117,7 +132,8 @@ class WellcomeController extends Controller
     public function plant_detail($id)
     {
         $plant = DB::table('plants')->where('id', $id)->first();
-        return view('frontend.plant_detail', compact('plant'));
+        $type = 'plant';
+        return view('frontend.plant_detail', compact('plant', 'type'));
     }
 
     public function seeds(Request $request)
