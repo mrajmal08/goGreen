@@ -164,7 +164,9 @@
                                 <h3>{{ $plant->name }}</h3>
                             </a>
                             <div class="location"> Location:
+                                @if(isset($plant->cat_id))
                                 <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
+                            @endif
                             </div>
                             <div class="price">Rs.{{ $plant->price }}</div>
                             <form method="GET" action="{{ route('add.to.cart') }}">
@@ -198,7 +200,9 @@
                                 <h3>{{ $plant->name }}</h3>
                             </a>
                             <div class="location"> Location:
+                                @if(isset($plant->cat_id))
                                 <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
+                                @endif
                             </div>
                             <div class="price">Rs.{{ $plant->price }}</div>
                             <form method="GET" action="{{ route('add.to.cart') }}">

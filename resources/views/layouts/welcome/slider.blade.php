@@ -1,6 +1,6 @@
     <!-- home section navbar  -->
 
-    <section class="homesection" id="homediv">
+    <section class="homesection" id="homediv" style="padding: 0px; !important">
         <div class="swiper-container home-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">

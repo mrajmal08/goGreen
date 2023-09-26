@@ -227,7 +227,7 @@
                         <span>second</span>
                     </div>
                 </div>
-                <a href="deals.html" class="btn">check out deal</a>
+                <a href="{{ route('deals')}}" class="btn">check out deal</a>
             </div>
 
             <div class="image">

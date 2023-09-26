@@ -326,18 +326,17 @@ class WellcomeController extends Controller
     }
 
     public function filter(Request $request){
-
         $plants = Plant::where('name', 'LIKE', '%' . $request->search . '%')->get();
         if (!$plants->isEmpty()) {
             return view('frontend.plants', compact('plants'));
         }
         $plants = DB::table('plants_by_season')->where('name', 'LIKE', '%' . $request->search . '%')->get();
         if (!$plants->isEmpty()) {
-            return view('frontend.plants', compact('plants'));
+            return view('frontend.plant_by_season', compact('plants'));
         }
         $plants = DB::table('flowering_plants')->where('name', 'LIKE', '%' . $request->search . '%')->get();
         if (!$plants->isEmpty()) {
-            return view('frontend.plants', compact('plants'));
+            return view('frontend.flowering_plants', compact('plants'));
         }
         $seeds = DB::table('seeds')->where('name', 'LIKE', '%' . $request->search . '%')->get();
         if (!$seeds->isEmpty()) {
