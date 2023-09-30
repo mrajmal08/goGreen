@@ -40,12 +40,13 @@
                                                 <tr>
                                                     <th>Name</th>
                                                     <th>Phone</th>
+                                                    <th>City</th>
                                                     <th>Address</th>
                                                     <th>Product Name</th>
                                                     <th>Product Photo</th>
                                                     <th>Quantity</th>
                                                     <th>Price</th>
-                                                    <th>Status</th>
+                                                    {{-- <th>Status</th> --}}
 
                                                 </tr>
                                             </thead>
@@ -54,6 +55,7 @@
                                                     <tr>
                                                         <td>{{ $item->name }}</td>
                                                         <td>{{ $item->phone }}</td>
+                                                        <td>{{ $item->city }}</td>
                                                         <td>{{ $item->address }}</td>
                                                         <td>{{ $item->product_name }}</td>
                                                         <td>
@@ -109,7 +111,7 @@
                                                         <td>{{ $item->quantity }}</td>
                                                         <td>{{ $item->price }}</td>
 
-                                                        <td>
+                                                        {{-- <td>
                                                             <form method="POST" action="{{ route('updateStatus') }}"
                                                                 id="statusForm">
                                                                 @csrf
@@ -135,7 +137,7 @@
                                                                 }
                                                             </script>
 
-                                                        </td>
+                                                        </td> --}}
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -143,12 +145,13 @@
                                                 <tr>
                                                     <th>Name</th>
                                                     <th>Phone</th>
+                                                    <th>City</th>
                                                     <th>Address</th>
                                                     <th>Product Name</th>
                                                     <th>Product Photo</th>
                                                     <th>Quantity</th>
                                                     <th>Price</th>
-                                                    <th>Status</th>
+                                                    {{-- <th>Status</th> --}}
 
                                                 </tr>
                                             </tfoot>

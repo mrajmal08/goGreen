@@ -118,15 +118,19 @@
                         </div>
 
                         <div class="group">
+                            <label for="city">City</label>
+                            <select name="city" id="city">
+                                <option selected disabled>Chose City</option>
+                                <option value="Sialkot">Sialkot</option>
+                                <option value="Gujranwala">Gujranwala</option>
+                                <option value="Wazirabad">Wazirabad</option>
+                                <option value="Gujrat">Gujrat</option>
+                            </select>                           
+                        </div>
+
+                        <div class="form-group">
                             <label for="address">Address</label>
-                            <select name="address" id="address">
-                                <option selected disabled>Chose Address</option>
-                                <option value="Haji Pura">Haji Pura</option>
-                                <option value="Hunter Pura">Hunter Pura</option>
-                                <option value="Shahab Pura">Shahab Pura</option>
-                                <option value="Khadim Ali Road">Khadim Ali Road</option>
-                            </select>
-                            {{-- <input type="text" name="address" id="address"> --}}
+                             <input class="form-control" type="text" name="address" id="address" style="width: 208%;">
                         </div>
                     </div>
                     @if (session('cart'))

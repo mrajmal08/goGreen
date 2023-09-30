@@ -108,7 +108,13 @@
                         <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
                     </div>
                     <div class="price">Rs.{{ $plant->price }}</div>
-                    <a href="{{ route('add.to.cart', $plant->id) }}" class="btn">add to cart</a>
+                    <form method="GET" action="{{ route('add.to.cart') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="plant" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="btn"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+                            </form>
                 </div>
             @endforeach
 
@@ -139,8 +145,13 @@
                         <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
                     </div>
                     <div class="price">Rs.{{ $plant->price }}</div>
-                    <a href="{{ route('add.to.cart', $plant->id) }}" class="btn">add to cart</a>
-                </div>
+                    <form method="GET" action="{{ route('add.to.cart') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="seed" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="btn"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+                            </form>                </div>
             @endforeach
 
         </div>
@@ -170,8 +181,14 @@
                         <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
                     </div>
                     <div class="price">Rs.{{ $plant->price }}</div>
-                    <a href="{{ route('add.to.cart', $plant->id) }}" class="btn">add to cart</a>
-                </div>
+                    <form method="GET" action="{{ route('add.to.cart') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="accessory" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="btn"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+                            </form>               
+                         </div>
             @endforeach
 
         </div>
@@ -198,8 +215,13 @@
                     </a>
                    
                     <div class="price">Rs.{{ $plant->price }}</div>
-                    <a href="{{ route('add.to.cart', $plant->id) }}" class="btn">add to cart</a>
-                </div>
+                    <form method="GET" action="{{ route('add.to.cart') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="pot" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="btn"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+                            </form>                 </div>
             @endforeach
 
         </div>

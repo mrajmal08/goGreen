@@ -186,6 +186,7 @@ class CartController extends Controller
                 $data['name'] = $request->name;
                 $data['phone'] = $request->phone;
                 $data['address'] = $request->address;
+                $data['city'] = $request->city;
                 $data['status'] = "pending";
                 $data['type'] = $data['type'];
                 $data['user_id'] = auth()->user()->id;

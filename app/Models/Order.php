@@ -13,12 +13,14 @@ class Order extends Model
         'name',
         'phone',
         'address',
+        'city',
         'product_name',
         'product_photo',
         'quantity',
         'price',
         'product_id',
         'status',
-        'user_id'
+        'user_id',
+        'type'
     ];
 }
