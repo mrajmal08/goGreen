@@ -59,7 +59,6 @@
                                                 <tr>
                                                     <th>Name</th>
                                                     <th>Email</th>
-                                                    <th>Image</th>
                                                     <th>Role</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -71,19 +70,7 @@
                                                     <tr>
                                                         <td>{{ $item->name }}</td>
                                                         <td>{{ $item->email }}</td>
-                                                        <td>
-                                                            <div class="">
-                                                                <a href="{{ asset('assets/userImages') . '/' . $item->photo }}?text=1"
-                                                                    data-toggle="lightbox"
-                                                                    data-title="{{ $item->name }}"
-                                                                    data-gallery="gallery">
-                                                                    <img src="{{ asset('assets/userImages') . '/' . $item->photo }}?text=1"
-                                                                        class="img-fluid" alt="{{ $item->name }}"
-                                                                        style="width:40px" />
-                                                                </a>
-                                                            </div>
-
-                                                        </td>
+                                                      
                                                         <td>
                                                             <?php if($item->role_id == 1){ ?>
                                                             <span class="badge bg-success">Admin</span>
@@ -94,7 +81,11 @@
                                                         </td>
                                                         <td>
 
-                                                            @if($item->super_admin == 'yes')
+                                                            @if($item->role_id == 1)
+                                                            <a href="{{ route('users.edit', [$item->id]) }}"
+                                                                class="btn btn-warning btn-sm">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
                                                             @else
 
                                                             <a href="{{ route('users.edit', [$item->id]) }}"
@@ -116,7 +107,6 @@
                                                 <tr>
                                                     <th>Name</th>
                                                     <th>Email</th>
-                                                    <th>Image</th>
                                                     <th>Role</th>
                                                     <th>Action</th>
                                                 </tr>

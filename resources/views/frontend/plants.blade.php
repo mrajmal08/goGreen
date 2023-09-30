@@ -146,6 +146,7 @@
                 <section class="product" id="product"
                     style="    position: relative;
                 top: 250px;
+                padding-bottom: 90px;
             ">
                     <h1 class="heading" style="margin: 0px;">Products of Plants</h1>
                     <div class="box-container" style="width: 50% !important">
@@ -186,6 +187,7 @@
                 <div class="box-container">
                     @foreach ($plants as $plant)
                         <div class="box" data-name="b-calathea">
+                        <span class="discount"><?php echo 100 - intval($plant->discount_price/$plant->price *100) ?>%</span>
                             <div class="icons">
                                 <form method="GET" action="{{ route('add.to.wishlist') }}">
                                     @csrf

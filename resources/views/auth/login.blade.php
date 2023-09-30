@@ -9,7 +9,7 @@
 <body>
     <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true">
-        <div class="signup">
+        <div class="signup" style="top: 35px;">
             @error('email')
                 <span class="invalid-feedback" role="alert">
                     <p style="color: red">{{ $message }}</p>
@@ -49,9 +49,9 @@
                 @csrf
                 <label for="chk" aria-hidden="true">Login</label>
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                    name="password" required autocomplete="current-password">
+                    name="password" required autocomplete="current-password" placeholder="Password">
                 <button type="submit">Login</button>
             </form>
         </div>

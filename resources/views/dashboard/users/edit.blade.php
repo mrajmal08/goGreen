@@ -80,23 +80,7 @@
                                             <label for="inputDescription">User Address</label>
                                             <input type="text" id="inputName" value="{{ $user->address }}" name="address" class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputClientCompany">User image</label>
-                                            <div class="custom-file">
-                                                <input type="file" name="photo" class="custom-file-input" id="customFile">
-                                                <label class="custom-file-label" for="customFile">Choose file</label>
-                                            </div>
-                                            <div class="">
-                                                <a href="{{ asset('assets/userImages') . '/' . $user->photo }}?text=1"
-                                                    data-toggle="lightbox"
-                                                    data-title="{{ $user->name }}"
-                                                    data-gallery="gallery">
-                                                    <img src="{{ asset('assets/userImages') . '/' . $user->photo }}?text=1"
-                                                        class="img-fluid" alt="{{ $user->name }}"
-                                                        style="width:40px" />
-                                                </a>
-                                            </div>
-                                        </div>
+                                       
 
                                         <div class="form-group">
                                             <label>User Role</label>

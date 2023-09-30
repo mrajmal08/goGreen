@@ -36,7 +36,33 @@
                     @if (session('cart'))
                         @foreach (session('cart') as $id => $details)
                             <div class="item">
-                                <img src="{{ asset('assets/plantsFiles') . '/' . $details['image'] }}" />
+                            @if ($details['type'] == 'plant')
+                                        <img
+                                                src="{{ asset('assets/plantsFiles') . '/' . $details['image'] }}"
+                                                 class="img-responsive" />
+                                        
+                                    @elseif($details['type'] == 'seed')
+                                        <img
+                                                src="{{ asset('assets/seedsFiles') . '/' . $details['image'] }}"
+                                                 class="img-responsive" />
+                                        
+                                    @elseif($details['type'] == 'soil')
+                                        <img
+                                                src="{{ asset('assets/fertilizersFiles') . '/' . $details['image'] }}"
+                                                 class="img-responsive" />
+                                        
+                                    @elseif($details['type'] == 'accessory')
+                                        <img
+                                                src="{{ asset('assets/accessoriesFiles') . '/' . $details['image'] }}"
+                                                 class="img-responsive" />
+                                        
+                                    @elseif($details['type'] == 'pot')
+                                        <img
+                                                src="{{ asset('assets/potsFiles') . '/' . $details['image'] }}"
+                                                 class="img-responsive" />
+                                       
+                                    @endif
+                                
                                 <div class="info">
                                     <div class="name">{{ $details['name'] }}</div>
                                     <div class="price">Rs. {{ $details['price'] }} / 1</div>
@@ -93,7 +119,14 @@
 
                         <div class="group">
                             <label for="address">Address</label>
-                            <input type="text" name="address" id="address">
+                            <select name="address" id="address">
+                                <option selected disabled>Chose Address</option>
+                                <option value="Haji Pura">Haji Pura</option>
+                                <option value="Hunter Pura">Hunter Pura</option>
+                                <option value="Shahab Pura">Shahab Pura</option>
+                                <option value="Khadim Ali Road">Khadim Ali Road</option>
+                            </select>
+                            {{-- <input type="text" name="address" id="address"> --}}
                         </div>
                     </div>
                     @if (session('cart'))

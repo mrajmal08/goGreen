@@ -28,9 +28,7 @@
                <span class="badge badge-warning navbar-badge">15</span> --}}
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a href="{{ route('profile') }}" class="dropdown-item">
-                    <i class="fas fa-user mr-2"></i> Profile
-                </a>
+              
                 <div class="dropdown-divider"></div>
                 <form action="/logout" method="post">
                     @csrf

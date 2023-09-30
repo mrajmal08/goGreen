@@ -107,7 +107,7 @@
                 <section class="product" id="product"
                     style="position: relative;
                 top: 370px;
-                padding-bottom: 180px">
+                padding-bottom: 200px">
                     <h1 class="heading" style="margin: 0px;">All types of Seeds</h1>
                     <div class="box-container" style="width: 50% !important">>
                         <div class="box" data-name="b-calathea">

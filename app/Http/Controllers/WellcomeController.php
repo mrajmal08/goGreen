@@ -13,9 +13,12 @@ class WellcomeController extends Controller
 {
 
     public function homepage(){
-        $plants = DB::table('plants')->get();
+        $plants = DB::table('plants')->limit(3)->orderBy('id', 'Desc')->get();
+        $seeds = DB::table('seeds')->limit(3)->orderBy('id', 'Desc')->get();
+        $accessories = DB::table('accessories')->limit(3)->orderBy('id', 'Desc')->get();
+        $pots = DB::table('pots')->limit(3)->orderBy('id', 'Desc')->get();
 
-        return view('welcome', compact('plants'));
+        return view('welcome', compact('plants', 'seeds', 'accessories', 'pots'));
     }
 
     public function types_of_plants(Request $request)

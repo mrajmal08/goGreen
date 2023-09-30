@@ -96,13 +96,7 @@
                                             <label for="inputDescription">User Address</label>
                                             <input type="text" id="inputName" name="address" class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputClientCompany">User image</label>
-                                            <div class="custom-file">
-                                                <input type="file" name="photo" class="custom-file-input" id="customFile">
-                                                <label class="custom-file-label" for="customFile">Choose Image</label>
-                                            </div>
-                                        </div>
+                                     
 
                                         <div class="form-group">
                                             <label>User Role</label>

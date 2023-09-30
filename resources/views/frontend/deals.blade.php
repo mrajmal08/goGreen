@@ -49,7 +49,7 @@
             <div class="box-container">
                 @foreach ($plants as $plant)
                     <div class="box" data-name="b-calathea">
-                        <span class="discount"><?php echo  intval($plant->discount_price/$plant->price *100) ?>%</span>
+                        <span class="discount"><?php echo 100 - intval($plant->discount_price/$plant->price *100) ?>%</span>
                         <div class="icons">
                             <form method="GET" action="{{ route('add.to.wishlist') }}">
                                 @csrf
@@ -67,7 +67,13 @@
                             <span>{{ DB::table('plants_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
                         </div>
                         <div class="price">Rs.{{ $plant->discount_price }}<span>{{ $plant->price }}</span></div>
-                        <a href="{{ route('add.to.cart', $plant->id) }}" class="btn">add to cart</a>
+                        <form method="GET" action="{{ route('add.to.cart') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="plant" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="btn"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+                            </form>
                     </div>
                 @endforeach
             </div>
@@ -111,7 +117,7 @@
         <!-- .icons section ends -->
         @include('layouts.welcome.footer')
         @push('frontJs')
-            <script src="{{ asset('js/homescript.js') }}" defer></script>
+            <script src="{{ asset('js/deal.js') }}" defer></script>
             <script src="{{ asset('js/script.js') }}" defer></script>
         @endpush
     @endsection
