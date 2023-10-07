@@ -271,30 +271,7 @@ visibility: visible;
   gap: 10rem;
 }
 
-.circle-link {
-  text-decoration: none;
-}
 
-.circle-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.circle-image:hover{
-  transform: scale(1.1);
-  border:.3rem solid #124901;
-}
-.circle-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .home-section  a p{
   position: relative;
@@ -345,78 +322,18 @@ visibility: visible;
 }
 
 
-
-.sidebar {
-  width: 255px;
-  background-color: #ffffff;
-  height: 100%;
-  position: relative;
-  top: 9rem;
-  left: 4rem;
-  border:.1rem solid rgba(0,0,0,.3);
-}
-.sidebar h1{
-  list-style-type: none;
-  margin: 2rem;
-  padding: 0;
-  text-decoration-line: var(--green);
-  font-size: 2.5rem;
-}
-.sidebar ol {
-  list-style-type: none;
-  margin: 1rem;
-  padding: 0;
-  text-decoration-line: var(--green);
-  font-size: 2rem;
-  font-weight: 600;
-}
-.sidebar ol li a{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-decoration-line: var(--green);
-  font-size: 2rem;
-  font-weight: 600;
-  color: #000000;
-
-}
-.sidebar ul {
-  list-style-type: none;
-  margin: -2px;
-  padding: 0;
-  text-decoration-line: var(--green);
-  font-size: 1rem;
-
-}
-.sidebar ul li {
-  padding: 5px;
-  border-bottom:.1rem solid rgba(0,0,0,.3);
-
-}
-.sidebar ul li a{
-  text-decoration: none;
-  color: #333;
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.sidebar li a:hover {
-  color: #124901;
-  font-weight: bolder;
-}
-
 section{
-  padding: 1.5rem 15%;
-  margin-left: 15rem;
-  margin-right: 16rem;
-  margin-top: -30rem;
+  padding: 0.5rem 15%;
+  margin-left: 0rem;
+  margin-right: 19rem;
+  margin-top: 4rem;
   margin-bottom: 20rem;
 }
 .product .box-container{
   display: flex;
   flex-wrap: wrap;
   gap: 6rem;
-  width: 150%;
+  width: 130%;
   margin-bottom: 2rem;
 
 }
@@ -724,9 +641,9 @@ section{
   font-size: 1.4rem;
 }
 
-.footer_wrapper .contact-info li a {
+.footer_wrapper .contact-info li h4 {
   color: var(--text-gray);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .footer_wrapper .link-widget li a,

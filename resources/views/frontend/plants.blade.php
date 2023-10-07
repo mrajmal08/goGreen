@@ -43,30 +43,7 @@
             </div>
             <p>Flowering Plants</p>
         </a>
-        <a href="vegetable plant.html" class="circle-link">
-            <div class="circle-image">
-                <form method="GET" action="{{ route('plants') }}">
-                    @csrf
-                    <input type="hidden" name="id" value="4" />
-                    <button type="submit">
-                        <img src="{{ asset('images/vegimg/veg2.jpeg') }}" alt="Image 1">
-                    </button>
-                </form>
-            </div>
-            <p>Vegetable Plants</p>
-        </a>
-        <a href="" class="circle-link">
-            <div class="circle-image">
-                <form method="GET" action="{{ route('plants') }}">
-                    @csrf
-                    <input type="hidden" name="id" value="5" />
-                    <button type="submit">
-                        <img src="{{ asset('images/frutimg/frut1.jpeg') }}" alt="Image 2">
-                    </button>
-                </form>
-            </div>
-            <p>Fruit Plants</p>
-        </a>
+       
         <a href="" class="circle-link">
             <div class="circle-image">
                 <form method="GET" action="{{ route('plants') }}">
@@ -89,56 +66,7 @@
         </section>
 
 
-        <div class="sidebar">
-            <h1>Plants</h1>
-            <ol>
-                {{-- <li><a href="indoor.html">1-Indoor Plants</a></li> --}}
-                <ul>
-                    @foreach ($plants as $type)
-                        <li>
-                            <a href="{{ route('plant.detail', [$type->id]) }}"
-                                class="link-as-button">{{ $type->name }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                {{-- <li><a href="outdoor.html">2-Outdoor Plants</a></li>
-                <ul>
-                    <?php
-                    // $indoor = DB::table('plants_types')
-                    //     ->where('location', 'Outdoor Plants')
-                    //     ->get();
-                    ?>
-                    @foreach ($indoor as $type)
-                        <form method="GET" action="{{ route('plants') }}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $type->id }}" />
-                            <li>
-                                <a href="#" class="link-as-button"
-                                    onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                            </li>
-                        </form>
-                    @endforeach
-                </ul>
-                <li><a href="office.html">3-Office Plants</a></li>
-                <ul>
-                        <?php
-                        // $indoor = DB::table('plants_types')
-                        //     ->where('location', 'Office Plants')
-                        //     ->get();
-                        ?>
-                        @foreach ($indoor as $type)
-                            <form method="GET" action="{{ route('plants') }}">
-                                @csrf
-                                <input type="hidden" name="id" value="{{ $type->id }}" />
-                                <li>
-                                    <a href="#" class="link-as-button"
-                                        onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                                </li>
-                            </form>
-                        @endforeach
-                </ul> --}}
-            </ol>
-        </div>
+       
 
         <!-- product section starts  -->
         @if ($plants->count() == 1)
@@ -149,7 +77,7 @@
                 padding-bottom: 90px;
             ">
                     <h1 class="heading" style="margin: 0px;">Products of Plants</h1>
-                    <div class="box-container" style="width: 50% !important">
+                    <div class="box-container" style="width: 50% !important">  
                         <div class="box" data-name="b-calathea">
                             <div class="icons">
                                 <form method="GET" action="{{ route('add.to.wishlist') }}">
@@ -187,7 +115,6 @@
                 <div class="box-container">
                     @foreach ($plants as $plant)
                         <div class="box" data-name="b-calathea">
-                        <span class="discount"><?php echo 100 - intval($plant->discount_price/$plant->price *100) ?>%</span>
                             <div class="icons">
                                 <form method="GET" action="{{ route('add.to.wishlist') }}">
                                     @csrf

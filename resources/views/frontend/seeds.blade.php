@@ -53,52 +53,7 @@
         </div>
         </section>
 
-        <div class="sidebar">
-            <h1>Seeds</h1>
-            <ol>
-                <li><a href="#">1-Flowering Seeds</a></li>
-                <ul>
-                    @foreach ($seeds as $type)
-                        <li>
-                            <a href="{{ route('seeds.detail', [$type->id]) }}"
-                                class="link-as-button">{{ $type->name }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                {{-- <li><a href="#">2-Vegetable Seeds</a></li>
-                <ul>
-                    <?php $indoor = DB::table('seeds_types')
-                        ->where('location', 'Vegetable Seeds')
-                        ->get(); ?>
-                    @foreach ($indoor as $type)
-                        <form method="GET" action="{{ route('seeds') }}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $type->id }}" />
-                            <li>
-                                <a href="#" class="link-as-button"
-                                    onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                            </li>
-                        </form>
-                    @endforeach
-                </ul>
-                <li><a href="#">3-Fruit Seeds</a></li>
-                <ul>
-                    <?php $indoor = DB::table('seeds_types')
-                        ->where('location', 'Fruit Seeds')
-                        ->get(); ?>
-                    @foreach ($indoor as $type)
-                        <form method="GET" action="{{ route('seeds') }}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $type->id }}" />
-                            <li>
-                                <a href="#" class="link-as-button"
-                                    onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                            </li>
-                        </form>
-                    @endforeach
-                </ul> --}}
-            </ol>
-        </div>
+       
 
         <!-- product section starts  -->
 

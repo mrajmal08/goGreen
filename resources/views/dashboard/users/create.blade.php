@@ -80,7 +80,7 @@
                                         </div>
 
 
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>User phone</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
@@ -95,7 +95,7 @@
                                         <div class="form-group">
                                             <label for="inputDescription">User Address</label>
                                             <input type="text" id="inputName" name="address" class="form-control">
-                                        </div>
+                                        </div> --}}
                                      
 
                                         <div class="form-group">

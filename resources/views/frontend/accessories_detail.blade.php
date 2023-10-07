@@ -19,7 +19,7 @@
         </div>
         <div class="basic-info">
             <h1>{{ $accessories->name }}</h1>
-            <div class="location">Location: <span>{{ DB::table('accessories_types')->where('id',$accessories->type_id)->pluck('name')->first() }}</span></div>
+            
         </div>
         <div class="description">
             <h2>Description:</h2>

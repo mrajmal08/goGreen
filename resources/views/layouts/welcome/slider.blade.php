@@ -25,7 +25,7 @@
                         <div class="content">
 
                             <h3>decorate your home now</h3>
-                            <a href="{{ route('flowering.plants')}}" class="btn">shop now</a>
+                            <a href="{{ route('garden.core')}}" class="btn">shop now</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <div class="content">
 
                             <h3>Landscaping now</h3>
-                            <a href="{{ route('seeds') }}" class="btn">shop now</a>
+                            <a href="{{ route('landscaping') }}" class="btn">shop now</a>
                         </div>
                     </div>
                 </div>

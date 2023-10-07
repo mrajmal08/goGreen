@@ -111,7 +111,7 @@
                                                         <td>{{ $item->quantity }}</td>
                                                         <td>{{ $item->price }}</td>
 
-                                                        {{-- <td>
+                                                         <td>
                                                             <form method="POST" action="{{ route('updateStatus') }}"
                                                                 id="statusForm">
                                                                 @csrf
@@ -137,7 +137,7 @@
                                                                 }
                                                             </script>
 
-                                                        </td> --}}
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>

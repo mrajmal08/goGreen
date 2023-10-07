@@ -14,57 +14,7 @@
 
 <!-- home section starts -->
 
-<div class="sidebar">
-    <h1>Types of Plants</h1>
-    <ol>
-        <li><a href="#">→</a></li>
-        <ul>
-            <ul>
-                @foreach ($plants as $type)
-                    <li>
-                        <a href="{{ route('plant.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
-                    </li>
-                @endforeach
-            </ul>
-        </ul>
-        {{-- <li><a href="#">→</a></li>
-        <ul>
-            <?php
-            // $indoor = DB::table('plants_types')
-            // ->where('location', 'Outdoor Plants')
-            // ->get();
-            ?>
-        @foreach ($indoor as $type)
-            <form method="GET" action="{{ route('plants') }}">
-                @csrf
-                <input type="hidden" name="id" value="{{ $type->id }}" />
-                <li>
-                    <a href="#" class="link-as-button"
-                        onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                </li>
-            </form>
-        @endforeach
-        </ul>
-        <li><a href="#">→</a></li>
-    <ul>
-        <?php
-        // $indoor = DB::table('plants_types')
-        // ->where('location', 'Office Plants')
-        // ->get();
-         ?>
-    @foreach ($indoor as $type)
-        <form method="GET" action="{{ route('plants') }}">
-            @csrf
-            <input type="hidden" name="id" value="{{ $type->id }}" />
-            <li>
-                <a href="#" class="link-as-button"
-                    onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-            </li>
-        </form>
-    @endforeach
-    </ul> --}}
-    </ol>
-</div>
+
 
 <!-- product section starts  -->
 

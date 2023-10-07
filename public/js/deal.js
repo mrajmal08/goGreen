@@ -1,4 +1,4 @@
-let countDate = new Date('August 01, 2023 00:00:00').getTime();
+let countDate = new Date('October 15, 2023 00:00:00').getTime();
 
 function countDown(){
 

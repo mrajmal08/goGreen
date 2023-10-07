@@ -6,43 +6,6 @@
 @section('content')
     <!-- home section starts  -->
 
-    <div class="home-section">
-        <a href="mustard seed.html" class="circle-link">
-            <div class="circle-image">
-                <form method="GET" action="{{ route('seeds') }}">
-                    @csrf
-                    <input type="hidden" name="id" value="4" />
-                    <button type="submit">
-                        <img src="{{ asset('images/seedsimg/mustered.jpg') }}" alt="Image 1">
-                    </button>
-                </form>
-            </div>
-            <p>Mustard Seeds</p>
-        </a>
-        <a href="sunflower Seeds.html" class="circle-link">
-            <div class="circle-image">
-                <form method="GET" action="{{ route('seeds') }}">
-                    @csrf
-                    <input type="hidden" name="id" value="5" />
-                    <img src="{{ asset('images/seedsimg/sunflower2.jpg') }}"alt="Image 2">
-                    </button>
-                </form>
-            </div>
-            <p>Sun Flower seeds</p>
-        </a>
-        <a href="Jasmine seed.html" class="circle-link">
-            <div class="circle-image">
-                <form method="GET" action="{{ route('seeds') }}">
-                    @csrf
-                    <input type="hidden" name="id" value="6" />
-                    <img src="{{ asset('images/seedsimg/jasmina.jpg') }}" alt="Image 3">
-                    </button>
-                </form>
-            </div>
-            <p>Jasmine seeds</p>
-        </a>
-    </div>
-
     <home class="banner-container">
         <div class="banner">
             <marquee DIRECTION="left" scrollamount="18" style="background: url({{ asset('images/images/header1.jpg') }});">
@@ -51,18 +14,7 @@
         </div>
         </section>
 
-        <div class="sidebar">
-            <h1>Flowering Seeds</h1>
-            <ol>
-                <ul>
-                    @foreach ($seeds as $type)
-                    <li>
-                        <a href="{{ route('seeds.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
-                    </li>
-                 @endforeach
-                </ul>
-            </ol>
-        </div>
+     
 
 
         <!-- product section starts  -->

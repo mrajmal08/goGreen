@@ -45,7 +45,7 @@
         </section>
 
         <section class="product" id="product">
-            <h1 class="heading">Categories of Deals</h1>
+            <h1 class="heading">Discounted Plants</h1>
             <div class="box-container">
                 @foreach ($plants as $plant)
                     <div class="box" data-name="b-calathea">
@@ -74,6 +74,112 @@
                                 <a href="#" class="btn"
                                     onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
                             </form>
+                    </div>
+                @endforeach
+            </div>
+        </section>
+
+        <section class="product" id="product">
+                <h1 class="heading">Discounted Seeds</h1>
+                <div class="box-container">
+                    @foreach ($seeds as $plant)
+                        <div class="box" data-name="b-calathea">
+                        <span class="discount"><?php echo 100 - intval($plant->discount_price/$plant->price *100) ?>%</span>
+                            <div class="icons">
+                                <form method="GET" action="{{ route('add.to.wishlist') }}">
+                                    @csrf
+                                    <input type="hidden" name="type" value="seed" />
+                                    <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                    <a href="#" class="fas fa-heart"
+                                        onclick="event.preventDefault(); this.closest('form').submit();"></a>
+                                </form>
+                            </div>
+                            <a class="underline" href="{{ route('seeds.detail', [$plant->id]) }}">
+                                <img src="{{ asset('assets/seedsFiles') . '/' . $plant->photo }}" alt="">
+                                <h3>{{ $plant->name }}</h3>
+                            </a>
+                            <div class="location"> Location:
+                                <span>{{ DB::table('seeds_categories')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
+                            </div>
+                            <div class="price">Rs.{{ $plant->discount_price }}<span>{{ $plant->price }}</span></div>
+                            <form method="GET" action="{{ route('add.to.cart') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="seed" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="btn"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+                            </form>
+                        </div>
+                    @endforeach
+                </div>
+            </section>
+
+            <section class="product" id="product">
+            <h1 class="heading">Discounter Accessories</h1>
+            <div class="box-container">
+                @foreach ($accessories as $plant)
+                    <div class="box" data-name="b-calathea">
+                    <span class="discount"><?php echo 100 - intval($plant->discount_price/$plant->price *100) ?>%</span>
+
+                        <div class="icons">
+                            <form method="GET" action="{{ route('add.to.wishlist') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="accessory" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="fas fa-heart"
+                                onclick="event.preventDefault(); this.closest('form').submit();"></a>
+                            </form>
+                        </div>
+                        <a class="underline" href="{{ route('accessories.detail', [$plant->id]) }}">
+                            <img src="{{ asset('assets/accessoriesFiles') . '/' . $plant->photo }}" alt="">
+                            <h3>{{ $plant->name }}</h3>
+                        </a>
+                        <div class="location"> Category:
+                            <span>{{ DB::table('accessories_cat')->where('id', $plant->cat_id)->pluck('name')->first() }}</span>
+                        </div>
+                        <div class="price">Rs.{{ $plant->discount_price }}<span>{{ $plant->price }}</span></div>
+                        <form method="GET" action="{{ route('add.to.cart') }}">
+                            @csrf
+                            <input type="hidden" name="type" value="accessory" />
+                            <input type="hidden" name="id" value="{{ $plant->id }}" />
+                            <a href="#" class="btn"
+                            onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+                        </form>
+                    </div>
+                @endforeach
+
+            </div>
+        </section>
+
+        <section class="product" id="product">
+            <h1 class="heading">Discounted Pots</h1>
+            <div class="box-container">
+                @foreach ($pots as $plant)
+                    <div class="box" data-name="b-calathea">
+                    <span class="discount"><?php echo 100 - intval($plant->discount_price/$plant->price *100) ?>%</span>
+
+                        <div class="icons">
+                            <form method="GET" action="{{ route('add.to.wishlist') }}">
+                                @csrf
+                                <input type="hidden" name="type" value="pot" />
+                                <input type="hidden" name="id" value="{{ $plant->id }}" />
+                                <a href="#" class="fas fa-heart"
+                                    onclick="event.preventDefault(); this.closest('form').submit();"></a>
+                            </form>
+                        </div>
+                        <a class="underline" href="{{ route('pots.detail', [$plant->id]) }}">
+                            <img src="{{ asset('assets/potsFiles') . '/' . $plant->photo }}" alt="">
+                            <h3>{{ $plant->name }}</h3>
+                        </a>
+                       
+                        <div class="price">Rs.{{ $plant->discount_price }}<span>{{ $plant->price }}</span></div>
+                        <form method="GET" action="{{ route('add.to.cart') }}">
+                            @csrf
+                            <input type="hidden" name="type" value="pot" />
+                            <input type="hidden" name="id" value="{{ $plant->id }}" />
+                            <a href="#" class="btn"
+                                onclick="event.preventDefault(); this.closest('form').submit();">add to cart</a>
+                        </form>
                     </div>
                 @endforeach
             </div>

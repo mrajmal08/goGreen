@@ -80,12 +80,6 @@
                     </li>
                     <li class="menu-item menu-item-has-children">
                         <a href="{{ route('soil.fertilizer') }}">Soil&fertilizer</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="{{ route('soil.fertilizer') }}">Organic fertilizer</a>
-                                <a href="{{ route('spray') }}">Spray</a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="menu-item menu-item-has-children">
                         <a href="{{ route('accessories') }}">Accessories</a>
@@ -142,11 +136,6 @@
                     </li>
                     <li class="menu-item menu-item-has-children">
                         <a href="{{ route('deals') }}">Deals</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item">
-                                <a href="{{ route('deals') }}">Occasion</a>
-                            </li>
-                        </ul>
                     </li>
                 </ul>
             </nav>

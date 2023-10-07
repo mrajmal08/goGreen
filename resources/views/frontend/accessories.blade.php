@@ -7,7 +7,7 @@
     <!-- home section starts  -->
 
     <div class="home-section">
-        <a href="gardening tool.html" class="circle-link">
+        <a href="" class="circle-link">
             <div class="circle-image">
                 <form method="GET" action="{{ route('accessories') }}">
                     @csrf
@@ -19,7 +19,7 @@
             </div>
             <p>Gardening Tool</p>
         </a>
-        <a href="seed starter.html" class="circle-link">
+        <a href="" class="circle-link">
             <div class="circle-image">
                 <form method="GET" action="{{ route('accessories') }}">
                     @csrf
@@ -41,18 +41,7 @@
         </div>
         </section>
 
-        <div class="sidebar">
-            <h1>Accessories</h1>
-            <ol>
-                <ul>
-                    @foreach ($accessories as $type)
-                    <li>
-                        <a href="{{ route('accessories.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
-                    </li>
-                 @endforeach
-                </ul>
-            </ol>
-        </div>
+       
 
         <!-- product section starts  -->
 
@@ -60,7 +49,7 @@
         @foreach ($accessories as $plant)
         <section class="product" id="product"
                     style="    position: relative;
-                top: 200px;
+                top: 0px;
             ">
             <h1 class="heading" style="margin: 0px;">Gardening Tool</h1>
             <div class="box-container" style="width: 50% !important">

@@ -19,7 +19,7 @@
         </div>
         <div class="basic-info">
             <h1>{{ $seed->name }}</h1>
-            <div class="location">Location: <span>{{ DB::table('seeds_types')->where('id',$seed->type_id)->pluck('name')->first() }}</span></div>
+        
         </div>
         <div class="description">
             <h2>Description:</h2>

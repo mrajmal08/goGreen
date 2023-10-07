@@ -32,7 +32,6 @@
   font-family: 'Roboto', sans-serif;
   margin:0; padding:0;
   box-sizing: border-box;
-  text-transform: capitalize;
   outline: none; border:none;
   text-decoration: none;
   transition: all .2s linear;
@@ -291,7 +290,7 @@ visibility: visible;
   "active active active"
   "idle idle idle";
   grid-gap: 5px;
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 .box .images .img-holder img {
@@ -359,7 +358,7 @@ visibility: visible;
 }
 .box .description span{
   padding:1rem 0;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color:black;
   text-align: right;
   left: 5rem;

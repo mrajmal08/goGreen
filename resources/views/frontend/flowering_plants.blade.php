@@ -23,19 +23,7 @@
 </section>
 
 
-<div class="sidebar">
-    <h1>Flowering Plants</h1>
-    <ol>
-        <li><a href="#">→</a></li>
-        <ul>
-            @foreach ($plants as $type)
-            <li>
-                <a href="{{ route('flower.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
-            </li>
-        @endforeach
-        </ul>
-    </ol>
-</div>
+
 
 
 <!-- product section starts  -->
@@ -59,9 +47,7 @@
                 <a class="underline" href="{{ route('flower.detail', [$plant->id])}}">
                 <img src="{{ asset('assets/flowersFiles') . '/' . $plant->photo }}" alt="">
                 <h3>{{ $plant->name }}</h3></a>
-                <div class="location"> Location:
-                    <span>{{ DB::table('flowering_plants_types')->where('id', $plant->type_id)->pluck('name')->first() }}</span>
-                </div>
+                
                 <div class="price">Rs.{{ $plant->price }}</div>
                 <form method="GET" action="{{ route('add.to.cart') }}">
                     @csrf
@@ -92,9 +78,7 @@
                 <a class="underline" href="{{ route('flower.detail', [$plant->id])}}">
                 <img src="{{ asset('assets/flowersFiles') . '/' . $plant->photo }}" alt="">
                 <h3>{{ $plant->name }}</h3></a>
-                <div class="location"> Location:
-                    <span>{{ DB::table('flowering_plants_types')->where('id', $plant->type_id)->pluck('name')->first() }}</span>
-                </div>
+                
                 <div class="price">Rs.{{ $plant->price }}</div>
                 <form method="GET" action="{{ route('add.to.cart') }}">
                     @csrf

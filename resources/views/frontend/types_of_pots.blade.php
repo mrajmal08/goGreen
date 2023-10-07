@@ -4,18 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/homepage/typesofpots.css') }}">
 @endpush
 @section('content')
-    <div class="sidebar">
-        <h1>Types of Pots</h1>
-        <ol>
-            <ul>
-                @foreach ($pots as $type)
-                <li>
-                    <a href="{{ route('pots.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
-                </li>
-             @endforeach
-            </ul>
-        </ol>
-    </div>
+    
 
 
     <!-- product section starts  -->
@@ -38,9 +27,7 @@
                         <img src="{{ asset('assets/potsFiles') . '/' . $plant->photo }}" alt="">
                         <h3>{{ $plant->name }}</h3>
                     </a>
-                    <div class="location"> Type:
-                        <span>{{ DB::table('pots_types')->where('id', $plant->type_id)->pluck('name')->first() }}</span>
-                    </div>
+                   
                     <div class="price">Rs.{{ $plant->price }}</div>
                     <form method="GET" action="{{ route('add.to.cart') }}">
                         @csrf

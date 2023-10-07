@@ -222,11 +222,12 @@ class WellcomeController extends Controller
 
     public function gardening_tools(Request $request)
     {
-        if ($request->id) {
-            $accessories = DB::table('accessories')->where('cat_id', $request->id)->get();
-        } else {
-            $accessories = DB::table('accessories')->whereIn('cat_id', [6, 7, 8])->get();
-        }
+    //    if ($request->id) {
+     //       $accessories = DB::table('accessories')->where('cat_id', $request->id)->get();
+     //   } else {
+      //      $accessories = DB::table('accessories')->whereIn('cat_id', [6, 7, 8])->get();
+      //  }
+        $accessories = DB::table('accessories')->where('cat_id', 1)->get();
         $types = DB::table('accessories_types')->where('location', 'garden')->get();
         $categories = DB::table('accessories_cat')->get();
 
@@ -234,11 +235,13 @@ class WellcomeController extends Controller
     }
     public function seed_starter(Request $request)
     {
-        if ($request->id) {
-            $accessories = DB::table('accessories')->where('cat_id', $request->id)->get();
-        } else {
-            $accessories = DB::table('accessories')->whereIn('cat_id', [3, 4, 5])->get();
-        }
+     //   if ($request->id) {
+    //       $accessories = DB::table('accessories')->where('cat_id', $request->id)->get();
+     //   } else {
+      ///      $accessories = DB::table('accessories')->whereIn('cat_id', [3, 4, 5])->get();
+     //   }
+
+        $accessories = DB::table('accessories')->where('cat_id', 2)->get();
         $types = DB::table('accessories_types')->get();
         $categories = DB::table('accessories_cat')->get();
 
@@ -340,8 +343,11 @@ class WellcomeController extends Controller
     }
     public function deals()
     {
-        $plants = DB::table('plants')->whereNotNull('discount_price')->get();
-        return view('frontend.deals', compact('plants'));
+        $plants = DB::table('plants')->whereNotNull('discount_price')->limit(3)->orderBy('id', 'Desc')->get();
+        $seeds = DB::table('seeds')->whereNotNull('discount_price')->limit(3)->orderBy('id', 'Desc')->get();
+        $accessories = DB::table('accessories')->whereNotNull('discount_price')->limit(3)->orderBy('id', 'Desc')->get();
+        $pots = DB::table('pots')->whereNotNull('discount_price')->limit(3)->orderBy('id', 'Desc')->get();
+        return view('frontend.deals', compact('plants', 'seeds', 'accessories', 'pots'));
     }
 
     public function filter(Request $request){

@@ -53,30 +53,6 @@
                 </button>
             </form>
         </div>
-        <p>Vegetable Plants</p>
-    </a>
-    <a href="" class="circle-link">
-        <div class="circle-image">
-            <form method="GET" action="{{ route('plants') }}">
-                @csrf
-                <input type="hidden" name="id" value="5" />
-                <button type="submit">
-                    <img src="{{ asset('images/frutimg/frut1.jpeg') }}" alt="Image 2">
-                </button>
-            </form>
-        </div>
-        <p>Fruit Plants</p>
-    </a>
-    <a href="" class="circle-link">
-        <div class="circle-image">
-            <form method="GET" action="{{ route('plants') }}">
-                @csrf
-                <input type="hidden" name="id" value="6" />
-                <button type="submit">
-                    <img src="{{ asset('images/oficimg/offic1.jpeg') }}" alt="Image 2">
-                </button>
-            </form>
-        </div>
         <p>Office Plants</p>
     </a>
 </div>
@@ -90,52 +66,6 @@
 </section>
 
 
-
-<div class="sidebar">
-    <h1>Plants by location</h1>
-    <ol>
-        <li><a href="indoor.html">1-Indoor Plants</a></li>
-        <ul>
-               @foreach ($plants as $type)
-                        <li>
-                            <a href="{{ route('plant.detail', [$type->id])}}" class="link-as-button">{{ $type->name }}</a>
-                        </li>
-                    @endforeach
-        </ul>
-        {{-- <li><a href="outdoor.html">2-Outdoor Plants</a></li>
-        <ul>
-            <?php $indoor = DB::table('plants_types')
-                ->where('location', 'Outdoor Plants')
-                ->get(); ?>
-            @foreach ($indoor as $type)
-                <form method="GET" action="{{ route('plants') }}">
-                    @csrf
-                    <input type="hidden" name="id" value="{{ $type->id }}" />
-                    <li>
-                        <a href="#" class="link-as-button"
-                            onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                    </li>
-                </form>
-            @endforeach
-        </ul>
-        <li><a href="office.html">3-Office Plants</a></li>
-        <ul>
-            <?php $indoor = DB::table('plants_types')
-                ->where('location', 'Office Plants')
-                ->get(); ?>
-            @foreach ($indoor as $type)
-                <form method="GET" action="{{ route('plants') }}">
-                    @csrf
-                    <input type="hidden" name="id" value="{{ $type->id }}" />
-                    <li>
-                        <a href="#" class="link-as-button"
-                            onclick="event.preventDefault(); this.closest('form').submit();">{{ $type->name }}</a>
-                    </li>
-                </form>
-            @endforeach
-        </ul> --}}
-    </ol>
-</div>
 
 
 <section class="product" id="product" style="position: relative;

@@ -255,6 +255,7 @@
 @push('frontJs')
 
     <script src="{{ asset('js/homescript.js') }}" defer></script>
+    <script src="{{ asset('js/faqscript.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
 @endpush
 @endsection
