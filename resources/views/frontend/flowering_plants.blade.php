@@ -30,7 +30,7 @@
 @if ($plants->count() == 1)
 @foreach ($plants as $plant)
     <section class="product" id="product"  style="    position: relative;
-                top: 130px;
+                top:7px;
             ">
         <h1 class="heading">Flowering plant category</h1>
         <div class="box-container"  style="width: 50% !important">

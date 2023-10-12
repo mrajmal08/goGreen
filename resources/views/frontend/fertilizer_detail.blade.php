@@ -19,7 +19,6 @@
         </div>
         <div class="basic-info">
             <h1>{{ $plant->name }}</h1>
-            <div class="location">Type: <span>{{ DB::table('fertilizer_types')->where('id',$plant->type_id)->pluck('name')->first() }}</span></div>
         </div>
         <div class="description">
             <h2>Description:</h2>

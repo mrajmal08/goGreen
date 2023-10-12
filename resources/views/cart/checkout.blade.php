@@ -147,7 +147,7 @@
 
                         </div>
                     @endif
-                    <button type="submit" class="buttonCheckout">CHECKOUT</button>
+                    <button type="submit" class="buttonCheckout">CONFIRM ORDER</button>
                 </form>
             </div>
         </div>

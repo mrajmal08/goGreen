@@ -18,7 +18,7 @@
                     <img src="{{ asset('assets/userImages') . '/' . auth()->user()->photo }}" alt="AdminLTE Logo"
                         class="brand-image img-circle elevation-3" style="opacity: .8;margin-top: -7px; width: 5%">
                 @else
-                    <img src="{{ asset('assets/dist/img/avatar2.PNG') }}" alt="AdminLTE Logo"
+                    <img src="{{ asset('assets/dist/img/product1.jpg') }}" alt="AdminLTE Logo"
                         class="brand-image img-circle elevation-3" style="opacity: .8;margin-top: -7px; width:40px;">
                 @endif
 

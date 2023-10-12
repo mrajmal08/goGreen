@@ -73,8 +73,8 @@
             @foreach ($plants as $plant)
                 <section class="product" id="product"
                     style="    position: relative;
-                top: 250px;
-                padding-bottom: 90px;
+                top:7px;
+                padding-bottom: 50px;
             ">
                     <h1 class="heading" style="margin: 0px;">Products of Plants</h1>
                     <div class="box-container" style="width: 50% !important">  

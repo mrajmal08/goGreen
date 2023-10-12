@@ -15,7 +15,7 @@
 
     <section class="product" id="product"
                     style="position: relative;
-                top: 190px;">
+                top: 6px;">
         <h1 class="heading">Soil and Fertilizer</h1>
         <div class="box-container" style="width: 50% !important">
                 <div class="box" data-name="b-calathea">

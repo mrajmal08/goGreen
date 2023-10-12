@@ -375,10 +375,11 @@ visibility: visible;
   flex:1 1 16rem;
   padding:1rem;
   font-size: 1.8rem;
-  color:#444;
+  color:#ffffff;
   border:.1rem solid #444;
   text-align: center;
   border-radius: 6px;
+  width: 44rem;
 }
 
 .box .buttons a.cart{

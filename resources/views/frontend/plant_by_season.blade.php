@@ -26,7 +26,7 @@
         @foreach ($plants as $plant)
         <section class="product" id="product"
                     style="    position: relative;
-                top: 50px;
+                top: 0px;
             ">
             <h1 class="heading">All Season plant category</h1>
             <div class="box-container"  style="width: 50% !important">
