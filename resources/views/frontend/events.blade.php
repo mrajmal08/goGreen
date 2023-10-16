@@ -30,7 +30,7 @@
         <h3 class="heading">Garden Party Themes</h3>
     </div>
     <div class="description">
-        <p>Decorating garden for the party, choosing a theme will make it more adorable. Wish you were throwing a garden party in the tropics somewhere? We recreate a luscious tropical atmosphere with colorful accessories . Add some bright cushions and hanging decorations.</p>
+        <p>Decorating garden for the party, choosing a theme will make it more adorable.Were you organizing a garden party  somewhere? We create a luscious  atmosphere with colorful accessories . Add some bright cushions and hanging decorations.</p>
     </div>
 
 </section>
@@ -96,28 +96,22 @@
 <section class="icons-container">
 
     <div class="icon">
-        <img src="images/icon1.png" alt="">
+    <img src="{{ asset('images/images/icon1.png') }}" alt="">
         <div class="content">
             <h3>free shipping</h3>
-            <p>Free shipping on order</p>
+            <p>Free shipping above Rs.5000</p>
         </div>
     </div>
+
     <div class="icon">
-        <img src="images/icon2.png" alt="">
-        <div class="content">
-            <h3>100% Money Back</h3>
-            <p>You've 30 days to Return</p>
-        </div>
-    </div>
-    <div class="icon">
-        <img src="images/icon3.png" alt="">
+    <img src="{{ asset('images/images/icon3.png') }}" alt="">
         <div class="content">
             <h3>Payment Secure</h3>
             <p>100% secure payment</p>
         </div>
     </div>
     <div class="icon">
-        <img src="images/icon4.png" alt="">
+    <img src="{{ asset('images/images/icon4.png') }}" alt="">
         <div class="content">
             <h3>Support 24/7</h3>
             <p>Contact us anytime</p>

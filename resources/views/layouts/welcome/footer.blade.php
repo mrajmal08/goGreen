@@ -20,7 +20,7 @@
                 <h5>Customer Support</h5>
                 <ul class="link-widget p-0">
                     <li><a href="{{route('privacy.policy')}}">Privacy Policy</a></li>
-                    <li><a href="return.policy">Return polices</a></li>
+                    <li><a href="{{ route('return.policy') }} ">Return polices</a></li>
                     <li><a href="{{ route('plants')}}">Office product rent</a></li>
                 </ul>
             </div>

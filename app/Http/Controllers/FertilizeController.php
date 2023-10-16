@@ -151,15 +151,17 @@ class FertilizeController extends Controller
          if ($request->price) {
              $fertilizers->price = $request->price;
          }
-         if ($request->discount_price) {
-             $fertilizers->discount_price = $request->discount_price;
+         if ($request->discount_price || is_null($request->discount_price)) {
+             $fertilizers->discount_price = $request->discount_price ? $request->discount_price: 0;
          }
+
          if ($request->location) {
              $fertilizers->location = $request->location;
          }
          if ($request->type_id) {
              $fertilizers->type_id = $request->type_id?$request->type_id:NULL;
          }
+
 
          $fertilizers->save();
 

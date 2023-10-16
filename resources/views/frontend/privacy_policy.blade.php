@@ -27,7 +27,6 @@
         <p>2. Address</p>
         <p>3. Contact numbers</p>
         <p>4. Email address.</p>
-        <p>To undertake website personalization, we will also gather information about the devices you use to access our sites (desktop and mobile), and this may include IP address. For further information on our use of cookies and tracking please see our Cookie Notice.</p>
     </div>
 </section>
 
@@ -35,7 +34,7 @@
 
 <!--Product detail start-->
 
-<section class="product-container">
+<!--<section class="product-container">
 
     <div class="content">
         <h3 class="heading">How would we utilize your data?</h3>
@@ -51,7 +50,7 @@
             <p>7. To follow up with them after correspondence (live chat, email or phone inquiries)</p>
         </div>
 
-</section>
+</section>-->
 
 <!--Product deatil end-->
 
@@ -63,14 +62,10 @@
         <h3 class="heading">Who we share your information with and why?</h3>
     </div>
         <div class="description">
-            <p>go green nursery  works with a number of trusted suppliers, agencies and businesses in order to provide you the high quality goods and services you expect from us such as delivery companies. </p>
+            <p>Go Green Nursery  works with a number of trusted suppliers, in order to provide you the high quality goods and services you expect from us such as delivery companies. </p>
             <h3> Deliver / Decore person: </h3>
-            <p>1. works with a number of trusted person who supply products and services on our behalf. All person are subject to thorough security checks and will only hold the minimum amount of personal information needed to fulfil the orders you place or provide a service on our behalf.</p>
-            <p>2. In order for you to receive your goods, go green nursery works with several delivery person. Again, we only pass limited information to them to ensure delivery of your items.</p>
-            <h3>IT Department:</h3>
-            <p>1. go green nursery  works with business who support our website and other business systems.</p>
-            <h3>Payment processing:</h3>
-            <p>1. go green nursery works with trusted delivery person payment processing providers to securely take and manage payments.</p>
+            <p>1. We works with a number of trusted person who supply products and give services on our behalf.We will only retain the minimum amount of your personal information required to fulfill orders or provide services on our behalf.</p>
+            <p>2.In order for you to receive your goods,Go Green Nursery works with several delivery persons. We only share limited information with them to ensure safe delivery of your items.</p>
         </div>
 
 </section>

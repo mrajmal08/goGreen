@@ -80,7 +80,7 @@
         <h3 class="heading">Soft Landscaping</h3>
     </div>
         <div class="description">
-            <p>Designing a landscape's non-construction-related aspects is known as soft landscaping. These components include hanging baskets, container gardens, potted plants, trees, bushes, and flowers. When using techniques like choosing different annual and perennial flowers for the gardens and flower beds, changing the soft parts of the landscape can be a simple way to change the exterior appearance of the house as a whole. Some soft landscaping components require planning in the long run. Just as it might take years for shrubs to mature into natural shade trees and , if not decades, to reach their full height. These things need considerable planning because they will form the backdrop of the landscape for years to come. Soft landscaping also includes container gardens. Geraniums are a popular flower to use in hanging baskets because they are simple to switch out each year.</p>
+            <p>Designing a landscape's non-construction-related aspects is known as soft landscaping. These components include hanging baskets, container gardens, potted plants, trees, bushes, and flowers. When using techniques like choosing different annual and perennial flowers for the gardens and flower beds, changing the soft parts of the landscape can be a simple way to change the exterior appearance of the house as a whole. Some soft landscaping components require planning in the long run. Just as it might take years for shrubs to mature into natural shade trees and , if not decades, to reach their full height. These things need considerable planning because they will form the backdrop of the landscape for years to come. Soft landscaping also includes container gardens.</p>
         </div>
 
 </section>
@@ -153,28 +153,21 @@
 <section class="icons-container">
 
     <div class="icon">
-        <img src="images/icon1.png" alt="">
+    <img src="{{ asset('images/images/icon1.png')}}" alt="">
         <div class="content">
             <h3>free shipping</h3>
-            <p>Free shipping on order</p>
+            <p>Free shipping above Rs.5000</p>
         </div>
     </div>
     <div class="icon">
-        <img src="images/icon2.png" alt="">
-        <div class="content">
-            <h3>100% Money Back</h3>
-            <p>You’ve 30 days to Return</p>
-        </div>
-    </div>
-    <div class="icon">
-        <img src="images/icon3.png" alt="">
+    <img src="{{ asset('images/images/icon3.png') }}" alt="">
         <div class="content">
             <h3>Payment Secure</h3>
             <p>100% secure payment</p>
         </div>
     </div>
     <div class="icon">
-        <img src="images/icon4.png" alt="">
+    <img src="{{ asset('images/images/icon4.png') }}" alt="">
         <div class="content">
             <h3>Support 24/7</h3>
             <p>Contact us anytime</p>

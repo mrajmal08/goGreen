@@ -105,7 +105,7 @@
                         <ul class="sub-menu">
                             <li class="menu-item">
                                 <a href="{{ route('events') }}">Plants For Events</a>
-                                <a href="{{ route('trips.tricks') }}">Gardening Trips & Tricks</a>
+                                <a href="{{ route('trips.tricks') }}">Gardening Tips & Tricks</a>
                                 <a href="{{ route('garden.core') }}">Garden Decoration</a>
                                 <a href="{{ route('bird.cage') }}">Bird Houses</a>
                                 <a href="{{ route('landscaping') }}">Landscaping</a>
@@ -119,7 +119,7 @@
                                 <a href="{{ route('faq') }}">FAQ</a>
                                 <a href="{{ route('return.policy') }}">Return Policy</a>
                                 <a href="{{ route('privacy.policy') }}">Privacy Policy</a>
-                                <a href="{{ route('damage.calm') }}">Damage Calim & Out Of Stock</a>
+                                <a href="{{ route('damage.calm') }}">Damage Claim</a>
                                 <a href="{{ route('delivery.area.time') }}">Delivery Area and Time</a>
                             </li>
                         </ul>

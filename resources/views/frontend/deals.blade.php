@@ -194,16 +194,10 @@
                 <img src="{{ asset('images/images/icon1.png') }}" alt="">
                 <div class="content">
                     <h3>free shipping</h3>
-                    <p>Free shipping on order</p>
+                    <p>Free shipping above Rs.5000</p>
                 </div>
             </div>
-            <div class="icon">
-                <img src="{{ asset('images/images/icon2.png') }}" alt="">
-                <div class="content">
-                    <h3>100% Money Back</h3>
-                    <p>You've 30 days to Return</p>
-                </div>
-            </div>
+            
             <div class="icon">
                 <img src="{{ asset('images/images/icon3.png') }}" alt="">
                 <div class="content">
